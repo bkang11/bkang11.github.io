@@ -54,38 +54,47 @@
 - title: Presentations
   type: nested_list
   contents:
-    - title: An Agent Architecture to Simulate Human-AI Trust Dynamics (2023)
+    - title: An Agent Architecture to Simulate Human-AI Trust Dynamics
       items: 
         - Outland, N. & Kang, B. Y. [Conference Presentation]
         - EAWOP Small Group Meeting: Human-AI Teams at Work: Opportunity or Threat?. Amsterdam, Netherlands.
-    - title: A Social Networks Approach to Leadership and Team Turnover (2023)
+      year: 2023
+    - title: A Social Networks Approach to Leadership and Team Turnover
       items: 
         - Kim, Y.J., Hoffman, B., Outland, N., & Kang, B.Y. [Poster]
         - Society for Industrial and Organizational Psychology Annual Conference, Boston, MA, United States.
+      year: 2023
     - title: Development of an Artificial Intelligent Teammate
       items: 
-        - Outland, N. & Kang, B.Y. (2023) [Symposium Presentation]
+        - Outland, N. & Kang, B.Y. [Symposium Presentation]
         - In Georganta, E. (Co-Chair) & Ulfert, A. (Co-Chair) (2023). Human-Agent Teamwork: The Future of Collaboration at Work
+      year: 2023
     - title: The Calibration of Trust Between Humans and AI Agents: A Computational Model
       items:
-        - Outland, N. , Kang, B.Y., Stryker, S., & Hess, R. (2023) [Symposium Presentation]
+        - Outland, N. , Kang, B.Y., Stryker, S., & Hess, R. [Symposium Presentation]
         - In Hess, R. (Co-chair), Outland, N. (Co-Chair), & Behrend, T. (Discussant). (2023). Can (A)I be on your team? Evaluating uses of AI in organizational teams [Symposium]. Society for Industrial and Organizational Psychology Annual Conference, Boston, MA, United States. 
+      year: 2023
     - title: Something Old and Something New: Trust Dynamics of Artificial Intelligence as a Teammate
       items: 
-        - Outland, N. & Kang, B.Y. (2022) [Symposium Presentation]
+        - Outland, N. & Kang, B.Y. [Symposium Presentation]
         - Academy of Management Annual Conference, Seattle, WA, United States.
+      year: 2022
     - title: Perceptions of Artificial Intelligence
       items: 
-        - Kang, B.Y. & Outland, N. (2022) [Poster]
+        - Kang, B.Y. & Outland, N. [Poster]
         - Society for Industrial and Organizational Psychology Annual Conference, Seattle, WA, United States.
+      year: 2022
     - title: Fear and Acceptance of AI at Work
       items:
-        - Hess, R.A., Kang, B.Y., Richardson, J.M., Stryker, S.R., & Outland, N. (2022) [Poster]
+        - Hess, R.A., Kang, B.Y., Richardson, J.M., Stryker, S.R., & Outland, N. [Poster]
         - Society for Industrial and Organizational Psychology Annual Conference, Seattle, WA, United States.
+      year: 2022
     - title: Good Cop/Bad Cop: A Deep Dive into Police Officer Personality
       items: 
-        - Harmata, R., Sherman, R., & Kang, B.Y. (2021) [Symposium Presentation]
+        - Harmata, R., Sherman, R., & Kang, B.Y. [Symposium Presentation]
         - Society for Industrial and Organizational Psychology Annual Conference, New Orleans, LA.
+      year: 2021
+
 
 
 
