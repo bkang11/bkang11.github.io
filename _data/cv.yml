@@ -38,19 +38,19 @@
       institution: PricewaterhouseCoopers 
       year: July 2020
       description:
-        - Description 1. Trained to attain proficiency in Tableau and Alteryx.
-        - Description 2. Learned about PwC's practices and gained an in-depth understanding of PwC's tax practice, Saratoga HR platform, people analytics group, and survey deployment.
-        - Description 3. Enhanced understanding of human-cetered design methods, data-driven storytelling, iterative development, and user research.
+        - Trained to attain proficiency in Tableau and Alteryx.
+        - Learned about PwC's practices and gained an in-depth understanding of PwC's tax practice, Saratoga HR platform, people analytics group, and survey deployment.
+        - Enhanced understanding of human-cetered design methods, data-driven storytelling, iterative development, and user research.
 
     - title: Learning and Development Intern
       institution: SPANX
       year: May 2019 - Aug 2019
       description:
-      - Description 1. Developed business resource groups for enhancing employee engagement.
-      - Description 2. Created and presented a final proposal for a complete redesign of Spanx's employee rewards, recognition, and learning platform to boost employee sentiment and engagement.
-      - Description 3. Planned and executed a company-wide learning event to boost employee knowledge of company travel procedures.
-      - Description 4. Performed market research on notable HRIS platforms and provided a recommendation for integrating an HRIS & ATS platform into current HR workflows.
-      - Description 5. Collaborated with cross-functional intern class to develop a recommendation for improving Spanx's consumer experience and enriching customer service channels through digital messaging.
+      - Developed business resource groups for enhancing employee engagement.
+      - Created and presented a final proposal for a complete redesign of Spanx's employee rewards, recognition, and learning platform to boost employee sentiment and engagement.
+      - Planned and executed a company-wide learning event to boost employee knowledge of company travel procedures.
+      - Performed market research on notable HRIS platforms and provided a recommendation for integrating an HRIS & ATS platform into current HR workflows.
+      - Collaborated with cross-functional intern class to develop a recommendation for improving Spanx's consumer experience and enriching customer service channels through digital messaging.
       
 - title: Presentations
   type: time_table
@@ -103,42 +103,14 @@
         - Harmata, R., Sherman, R., & Kang, B.Y. [Symposium Presentation]
         - Society for Industrial and Organizational Psychology Annual Conference, New Orleans, LA.
       
-
-
-
-
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items: 
-        - Nobel Prize in Physics 
-        - Matteucci Medal
-    - year: 2029
-      items: 
-        - Max Planck Medal
-
 - title: Academic Interests
   type: nested_list
   contents:
-    - title: Topic 1.
-      items: 
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+    - title: Human-Autonomy Teaming
+    - title: Team Dynamics
+
 
 - title: Other Interests
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - <u>Hobbies:</u> Tennis, Hiking, Traveling
