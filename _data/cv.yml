@@ -52,7 +52,7 @@
       - Description 5. Collaborated with cross-functional intern class to develop a recommendation for improving Spanx's consumer experience and enriching customer service channels through digital messaging.
       
 - title: Presentations
-  type: nested_list
+  type: time_table
   contents:
     - title: An Agent Architecture to Simulate Human-AI Trust Dynamics
       items: 
