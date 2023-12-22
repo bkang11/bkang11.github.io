@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: 
 
 profile:
   align: right
@@ -10,7 +10,7 @@ profile:
   image_circular: true # crops the image to make it circular
   more_info: >
     <p>University of Georgia</p>
-    <p>Athens</p>
+    <p>Athens,</p>
     <p>Georgia</p>
 
 news: true  # includes a list of news items
