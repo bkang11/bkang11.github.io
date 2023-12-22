@@ -19,4 +19,6 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi! I primarily research team dynamics and human-autonomy teaming.
+Passionate. Resourceful. Driven.
+
+I am third-year student in the Industrial-Organizational Psychology Ph.D. program at UGA. My research areas consist of team dynamics, human-autonomy teaming, and selection/assessment.
