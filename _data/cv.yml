@@ -1,169 +1,113 @@
 - title: General Information
   type: map
   contents:
-- name: Full Name
+    - name: Full Name
       value: Brandon Kang
     - name: Languages
       value: English, Chinese (Elementary Level)
 
-
 - title: Education
   type: time_table
   contents:
-  - title: Ph.D. Industrial Organizational Psychology
+    - title: Ph.D. Industrial Organizational Psychology
       institution: University of Georgia, Georgia, United States of America
       year: Expected 2026
-  - title: M.S. Industrial Organizational Psychology
+    - title: M.S. Industrial Organizational Psychology
       institution: University of Georgia, Georgia, United States of America
-      year: Expected 2025
-  - title: B.S. Psychology
+      year: Expected 2024
+    - title: B.S. Psychology
       institution: University of Georgia, Georgia, United States of America
       year: 2021
+
 
 - title: Experience
   type: time_table
   contents:
-  - title: Analytics & Organizational Effectiveness Intern
-  institution: Coachability Consultants, Inc.
-  year: May - Sept 2022
-  description:
-    - Managed survey development and deployment.
-    - Streamlined data analysis pipelines for automated analysis and visualization.
-    - Analyzed client data to produce actionable insights and recommendations.
-  - title: People & Organizational Intern - People Analytics & Insights Team
-  institution: PricewaterhouseCoopers 
-  year: July 2020
-  description:
-    - Gained training and experience using Tableau and Alteryx.
-    - Gained proficiency in Scrum methodologies and applied them to software platform development.
-    - Expanded knowledge of PwC’s practices and gained an in-depth understanding of PwC’s Tax practice, Saratoga Benchmarking program, People Analytics group, and survey deployment.
-    - Enhanced awareness of human-centered design methods through digital training and simulations.
-  - title: Learning and Development Intern
-  institution: SPANX
-  year: May - Aug 2019
-  description:
-    - Performed market research on notable human resource information systems and provided a recommendation for integrating an HRIS platform into current HR workflows.
-    - Designed and implemented interactive learning programs that improved employee engagement and retention across diverse formats, including learning management systems, microlearning, and resource groups.
-    - Revamped the employee rewards system to enhance employee engagement.
-    - Constructed a recommendation for integrating new human resource information systems into HR workflows.
-    - Planned and executed a learning event to boost employee knowledge of company travel procedures.
-    - Collaborated with a cross-functional intern class to develop a recommendation for elevating Spanx’s consumer experience tools and enriching customer service channels through digital messaging.
+    - title: Analytics & Organizational Effectiveness Intern
+      institution: Coachability Consultants, Inc.
+      year: May 2022 - Pres.
+      description:
+        - Description 1.
+        - Description 2.
+        - title: Description 3.
+          contents:
+            - Sub-description 1.
+            - Sub-description 2.
+    - title: People & Organizational Intern - People Analytics & Insights Team
+      institution: PricewaterhouseCoopers 
+      year: July 2020
+      description:
+        - Trained to attain proficiency in Tableau and Alteryx.
+        - Learned about PwC's practices and gained an in-depth understanding of PwC's tax practice, Saratoga HR platform, people analytics group, and survey deployment.
+        - Enhanced understanding of human-cetered design methods, data-driven storytelling, iterative development, and user research.
 
+    - title: Learning and Development Intern
+      institution: SPANX
+      year: May 2019 - Aug 2019
+      description:
+      - Developed business resource groups for enhancing employee engagement.
+      - Created and presented a final proposal for a complete redesign of Spanx's employee rewards, recognition, and learning platform to boost employee sentiment and engagement.
+      - Planned and executed a company-wide learning event to boost employee knowledge of company travel procedures.
+      - Performed market research on notable HRIS platforms and provided a recommendation for integrating an HRIS & ATS platform into current HR workflows.
+      - Collaborated with cross-functional intern class to develop a recommendation for improving Spanx's consumer experience and enriching customer service channels through digital messaging.
+      
 - title: Presentations
   type: time_table
   contents:
-    - title: Identifying Correlates of Trust in Human-Robot Teams: The Effects of Task, Personality, and Preferences
-      year: 2025
-      description: # Added description key
-        - Schecter, A., Outland, N., Kang, B. Y., Frericks, J., Johnsen, K., Doshi, P. [Conference Presentation]
-        - Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands.
-    
-    - title: Exploring Human-Autonomy Trust Dynamics in a Controlled Environment
-      year: 2025
-      description: # Added description key
-        - Kang B.Y., Stryker, S., Frericks, J., Outland, N., Schecter, A., Johnsen, K., Doshi, P., & Challa, A. [Symposium Presentation]
-        - Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands.
-
-    - title: An Analysis of Textbook Coverage of Cultural Differences in Cognitive Tests
-      year: 2025
-      description:
-        - Hoffman, B. J., Stryker, S. R., & Kang, B. Y. [Poster]
-        - Society for Industrial and Organizational Psychology Annual Conference, Denver, CO, United States.
-
-    - title: Prioritizing Human Sustainability in a Tooled-Up World
-      year: 2025
-      description:
-        - Szpaichler, S. (Chair), Kang, B. Y. (Speaker), Monitto, V. (Speaker), Stryker, S. R. (Speaker), Squires, B., Tucker, T. [Alternative Session Type - Fishbowl]
-        - Society for Industrial and Organizational Psychology Annual Conference, Denver, CO, United States.
-
-    - title: Designing a Virtual Environment for Examining Human-Robot Interactions
-      year: 2025
-      description:
-        - Stryker, S. R., Kang, B. Y., Outland, N. [Symposium Presentation]
-        - In Ikner, B. N. (Co-Chair) & Dickson, M. W. (Chair) (2025). Enhancing Fidelity in IO Psychology Research [Symposium].
-        - Society for Industrial and Organizational Psychology Annual Conference, Denver, CO, United States.
-
-    - title: Updates to a Computational Model of the Calibration of Trust between Human and AI Agents
-      year: 2024
-      description:
-        - Kang, B.Y. & Outland, N. [Symposium Presentation]
-        - In Kang, B. Y. (Co-Chair), Outland, N. (Co-Chair), & Cooke, N. (Discussant) (2024). (A)I can be your teammate! Exploring the Impacts of AI in Organizational Teams [Symposium].
-        - Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.
-
-    - title: Happy Worker, Happy Life? A Meta-Analysis of Job Satisfaction & Subjective Well-Being
-      year: 2024
-      description:
-        - Stryker, S. R., Kang, B. Y., Lumbreras, J. M., & Hoffman, B. J. [Poster]
-        - Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.
-
-    - title: Development and Validation of the Artificial Intelligence Salience Scale
-      year: 2023
-      description:
-        - Kang, B.Y., & Doddato, F. [Poster]
-        - Society for Industrial and Organizational Psychology Annual Conference, Chicago, IL, United States.
-
     - title: An Agent Architecture to Simulate Human-AI Trust Dynamics
       year: 2023
-      description:
+      description: 
         - Outland, N. & Kang, B. Y. [Conference Presentation]
-        - EAWOP Small Group Meeting: Human-AI Teams at Work: Opportunity or Threat?. Amsterdam, Netherlands.
-
+        - EAWOP Small Group Meeting- Human-AI Teams at Work- Opportunity or Threat?. Amsterdam, Netherlands.
+      
     - title: A Social Networks Approach to Leadership and Team Turnover
       year: 2023
-      description:
+      description: 
         - Kim, Y.J., Hoffman, B., Outland, N., & Kang, B.Y. [Poster]
         - Society for Industrial and Organizational Psychology Annual Conference, Boston, MA, United States.
-
+      
     - title: Development of an Artificial Intelligent Teammate
       year: 2023
-      description:
-        - Outland, N. & Kang, B. Y. [Symposium Presentation]
-        - In Georganta, E. (Co-Chair) & Ulfert, A. (Co-Chair) (2023). Human-Agent Teamwork: The Future of Collaboration at Work [Symposium].
-        - Society for Industrial and Organizational Psychology Annual Conference, Boston, MA, United States.
-
+      description: 
+        - Outland, N. & Kang, B.Y. [Symposium Presentation]
+        - In Georganta, E. (Co-Chair) & Ulfert, A. (Co-Chair) (2023). Human-Agent Teamwork- The Future of Collaboration at Work
+      
     - title: The Calibration of Trust Between Humans and AI Agents- A Computational Model
       year: 2023
       description:
-        - Outland, N., Kang, B. Y., Stryker, S., & Hess, R. [Symposium Presentation]
-        - In Hess, R. (Co-chair), Outland, N. (Co-Chair), & Behrend, T. (Discussant). (2023). Can (A)I be on your team? Evaluating uses of AI in organizational teams [Symposium].
-        - Society for Industrial and Organizational Psychology Annual Conference, Boston, MA, United States.
-
+        - Outland, N. , Kang, B.Y., Stryker, S., & Hess, R. [Symposium Presentation]
+        - In Hess, R. (Co-chair), Outland, N. (Co-Chair), & Behrend, T. (Discussant). (2023). Can (A)I be on your team? Evaluating uses of AI in organizational teams [Symposium]. Society for Industrial and Organizational Psychology Annual Conference, Boston, MA, United States. 
+      
     - title: Something Old and Something New- Trust Dynamics of Artificial Intelligence as a Teammate
       year: 2022
-      description:
+      description: 
         - Outland, N. & Kang, B.Y. [Symposium Presentation]
         - Academy of Management Annual Conference, Seattle, WA, United States.
-
+      
     - title: Perceptions of Artificial Intelligence
       year: 2022
-      description:
-        - Kang, B.Y., & Outland, N. [Poster]
+      description: 
+        - Kang, B.Y. & Outland, N. [Poster]
         - Society for Industrial and Organizational Psychology Annual Conference, Seattle, WA, United States.
-
+      
     - title: Fear and Acceptance of AI at Work
       year: 2022
       description:
-        - Hess, R. A., Kang, B. Y., Richardson, J. M., Stryker, S. R., & Outland, N. B. [Poster]
+        - Hess, R.A., Kang, B.Y., Richardson, J.M., Stryker, S.R., & Outland, N. [Poster]
         - Society for Industrial and Organizational Psychology Annual Conference, Seattle, WA, United States.
-        - *Selected as a Top Ten Poster*
-
+      
     - title: Good Cop/Bad Cop- A Deep Dive into Police Officer Personality
       year: 2021
-      description:
+      description: 
         - Harmata, R., Sherman, R., & Kang, B.Y. [Symposium Presentation]
         - Society for Industrial and Organizational Psychology Annual Conference, New Orleans, LA.
-
-    - title: The Moderating Effect of Promotion Expectations on Job Satisfaction by Industry Type
-      year: 2020
-      description:
-        - Kang, B.Y., Stern, C., Carter, N.T. [Poster Session]
-        - UGA Annual Center for Undergraduate Research Opportunities Symposium 2020, Athens, GA, United States.
-
+      
 - title: Academic Interests
   type: nested_list
   contents:
     - title: Human-Autonomy Teaming
     - title: Team Dynamics
+
 
 - title: Other Interests
   type: list
