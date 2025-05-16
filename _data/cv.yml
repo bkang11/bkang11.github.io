@@ -1,53 +1,52 @@
 - title: General Information
   type: map
   contents:
-- name: Full Name
+    - name: Full Name
       value: Brandon Kang
     - name: Languages
       value: English, Chinese (Elementary Level)
 
-
 - title: Education
   type: time_table
   contents:
-  - title: Ph.D. Industrial Organizational Psychology
+    - title: Ph.D. Industrial Organizational Psychology
       institution: University of Georgia, Georgia, United States of America
       year: Expected 2026
-  - title: M.S. Industrial Organizational Psychology
+    - title: M.S. Industrial Organizational Psychology
       institution: University of Georgia, Georgia, United States of America
       year: Expected 2025
-  - title: B.S. Psychology
+    - title: B.S. Psychology
       institution: University of Georgia, Georgia, United States of America
       year: 2021
 
 - title: Experience
   type: time_table
   contents:
-  - title: Analytics & Organizational Effectiveness Intern
-  institution: Coachability Consultants, Inc.
-  year: May - Sept 2022
-  description:
-    - Managed survey development and deployment.
-    - Streamlined data analysis pipelines for automated analysis and visualization.
-    - Analyzed client data to produce actionable insights and recommendations.
-  - title: People & Organizational Intern - People Analytics & Insights Team
-  institution: PricewaterhouseCoopers 
-  year: July 2020
-  description:
-    - Gained training and experience using Tableau and Alteryx.
-    - Gained proficiency in Scrum methodologies and applied them to software platform development.
-    - Expanded knowledge of PwC’s practices and gained an in-depth understanding of PwC’s Tax practice, Saratoga Benchmarking program, People Analytics group, and survey deployment.
-    - Enhanced awareness of human-centered design methods through digital training and simulations.
-  - title: Learning and Development Intern
-  institution: SPANX
-  year: May - Aug 2019
-  description:
-    - Performed market research on notable human resource information systems and provided a recommendation for integrating an HRIS platform into current HR workflows.
-    - Designed and implemented interactive learning programs that improved employee engagement and retention across diverse formats, including learning management systems, microlearning, and resource groups.
-    - Revamped the employee rewards system to enhance employee engagement.
-    - Constructed a recommendation for integrating new human resource information systems into HR workflows.
-    - Planned and executed a learning event to boost employee knowledge of company travel procedures.
-    - Collaborated with a cross-functional intern class to develop a recommendation for elevating Spanx’s consumer experience tools and enriching customer service channels through digital messaging.
+    - title: Analytics & Organizational Effectiveness Intern
+      institution: Coachability Consultants, Inc.
+      year: May - Sept 2022
+      description:
+        - Managed survey development and deployment.
+        - Streamlined data analysis pipelines for automated analysis and visualization.
+        - Analyzed client data to produce actionable insights and recommendations.
+    - title: People & Organizational Intern - People Analytics & Insights Team
+      institution: PricewaterhouseCoopers 
+      year: July 2020
+      description:
+        - Gained training and experience using Tableau and Alteryx.
+        - Gained proficiency in Scrum methodologies and applied them to software platform development.
+        - Expanded knowledge of PwC’s practices and gained an in-depth understanding of PwC’s Tax practice, Saratoga Benchmarking program, People Analytics group, and survey deployment.
+        - Enhanced awareness of human-centered design methods through digital training and simulations.
+    - title: Learning and Development Intern
+      institution: SPANX
+      year: May - Aug 2019
+      description:
+        - Performed market research on notable human resource information systems and provided a recommendation for integrating an HRIS platform into current HR workflows.
+        - Designed and implemented interactive learning programs that improved employee engagement and retention across diverse formats, including learning management systems, microlearning, and resource groups.
+        - Revamped the employee rewards system to enhance employee engagement.
+        - Constructed a recommendation for integrating new human resource information systems into HR workflows.
+        - Planned and executed a learning event to boost employee knowledge of company travel procedures.
+        - Collaborated with a cross-functional intern class to develop a recommendation for elevating Spanx’s consumer experience tools and enriching customer service channels through digital messaging.
 
 - title: Presentations
   type: time_table
@@ -132,32 +131,7 @@
       year: 2022
       description:
         - Outland, N. & Kang, B.Y. [Symposium Presentation]
-        - Academy of Management Annual Conference, Seattle, WA, United States.
-
-    - title: Perceptions of Artificial Intelligence
-      year: 2022
-      description:
-        - Kang, B.Y., & Outland, N. [Poster]
-        - Society for Industrial and Organizational Psychology Annual Conference, Seattle, WA, United States.
-
-    - title: Fear and Acceptance of AI at Work
-      year: 2022
-      description:
-        - Hess, R. A., Kang, B. Y., Richardson, J. M., Stryker, S. R., & Outland, N. B. [Poster]
-        - Society for Industrial and Organizational Psychology Annual Conference, Seattle, WA, United States.
-        - *Selected as a Top Ten Poster*
-
-    - title: Good Cop/Bad Cop- A Deep Dive into Police Officer Personality
-      year: 2021
-      description:
-        - Harmata, R., Sherman, R., & Kang, B.Y. [Symposium Presentation]
-        - Society for Industrial and Organizational Psychology Annual Conference, New Orleans, LA.
-
-    - title: The Moderating Effect of Promotion Expectations on Job Satisfaction by Industry Type
-      year: 2020
-      description:
-        - Kang, B.Y., Stern, C., Carter, N.T. [Poster Session]
-        - UGA Annual Center for Undergraduate Research Opportunities Symposium 2020, Athens, GA, United States.
+        - Academy of Management Annual Conference, Seattle, WA, United States
 
 - title: Academic Interests
   type: nested_list
