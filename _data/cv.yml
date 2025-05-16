@@ -22,36 +22,36 @@
 - title: Experience
   type: time_table
   contents:
-	- title: Analytics & Organizational Effectiveness Intern
-	institution: Coachability Consultants, Inc.
-	year: May - Sept 2022
-	description:
-		- Managed survey development and deployment.
-		- Streamlined data analysis pipelines for automated analysis and visualization.
-		- Analyzed client data to produce actionable insights and recommendations.
-	- title: People & Organizational Intern - People Analytics & Insights Team
-	institution: PricewaterhouseCoopers 
-	year: July 2020
-	description:
-        	- Gained training and experience using Tableau and Alteryx.
-		- Gained proficiency in Scrum methodologies and applied them to software platform development.
-		- Expanded knowledge of PwC’s practices and gained an in-depth understanding of PwC’s Tax practice, Saratoga Benchmarking program, People Analytics group, and survey deployment.
-		- Enhanced awareness of human-centered design methods through digital training and simulations.
-	- title: Learning and Development Intern
-	institution: SPANX
-	year: May - Aug 2019
-	description:
-      		- Performed market research on notable human resource information systems and provided a recommendation for integrating an HRIS platform into current HR workflows.
-		- Designed and implemented interactive learning programs that improved employee engagement and retention across diverse formats, including learning management systems, microlearning, and resource groups.
-		- Revamped the employee rewards system to enhance employee engagement.
-		- Constructed a recommendation for integrating new human resource information systems into HR workflows.
-		- Planned and executed a learning event to boost employee knowledge of company travel procedures.
-		- Collaborated with a cross-functional intern class to develop a recommendation for elevating Spanx’s consumer experience tools and enriching customer service channels through digital messaging.
+  - title: Analytics & Organizational Effectiveness Intern
+  institution: Coachability Consultants, Inc.
+  year: May - Sept 2022
+  description:
+    - Managed survey development and deployment.
+    - Streamlined data analysis pipelines for automated analysis and visualization.
+    - Analyzed client data to produce actionable insights and recommendations.
+  - title: People & Organizational Intern - People Analytics & Insights Team
+  institution: PricewaterhouseCoopers 
+  year: July 2020
+  description:
+          - Gained training and experience using Tableau and Alteryx.
+    - Gained proficiency in Scrum methodologies and applied them to software platform development.
+    - Expanded knowledge of PwC’s practices and gained an in-depth understanding of PwC’s Tax practice, Saratoga Benchmarking program, People Analytics group, and survey deployment.
+    - Enhanced awareness of human-centered design methods through digital training and simulations.
+  - title: Learning and Development Intern
+  institution: SPANX
+  year: May - Aug 2019
+  description:
+          - Performed market research on notable human resource information systems and provided a recommendation for integrating an HRIS platform into current HR workflows.
+    - Designed and implemented interactive learning programs that improved employee engagement and retention across diverse formats, including learning management systems, microlearning, and resource groups.
+    - Revamped the employee rewards system to enhance employee engagement.
+    - Constructed a recommendation for integrating new human resource information systems into HR workflows.
+    - Planned and executed a learning event to boost employee knowledge of company travel procedures.
+    - Collaborated with a cross-functional intern class to develop a recommendation for elevating Spanx’s consumer experience tools and enriching customer service channels through digital messaging.
 
 - title: Presentations
   type: time_table
   contents:
-    - title: Identifying Correlates of Trust in Human-Robot Teams: The Effects of Task, Personality, and Preferences
+      - title: Identifying Correlates of Trust in Human-Robot Teams: The Effects of Task, Personality, and Preferences
       year: 2025
       description: # Added description key
         - Schecter, A., Outland, N., Kang, B. Y., Frericks, J., Johnsen, K., Doshi, P. [Conference Presentation]
