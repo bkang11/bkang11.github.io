@@ -56,15 +56,18 @@
 - title: Presentations
   type: time_table
   contents:
+
     
     - title: Identifying Correlates of Trust in Human-Robot Teams: The Effects of Task, Personality, and Preferences
-	year: 2025
-	- Schecter, A., Outland, N., Kang, B. Y., Frericks, J., Johnsen, K., Doshi, P. [Conference Presentation]
-	- Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands.
+      year: 2025
+      description: # Added description key
+        - Schecter, A., Outland, N., Kang, B. Y., Frericks, J., Johnsen, K., Doshi, P. [Conference Presentation]
+        - Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands.
     - title: Exploring Human-Autonomy Trust Dynamics in a Controlled Environment
-	year: 2025
-	- Kang B.Y., Stryker, S., Frericks, J., Outland, N., Schecter, A., Johnsen, K., Doshi, P., & Challa, A. [Symposium Presentation]
-	- Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands.
+      year: 2025
+      description: # Added description key
+        - Kang B.Y., Stryker, S., Frericks, J., Outland, N., Schecter, A., Johnsen, K., Doshi, P., & Challa, A. [Symposium Presentation]
+        - Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands.
 
     - title: An Analysis of Textbook Coverage of Cultural Differences in Cognitive Tests
       year: 2025
@@ -147,7 +150,7 @@
       description:
         - Hess, R. A., Kang, B. Y., Richardson, J. M., Stryker, S. R., & Outland, N. B. [Poster]
         - Society for Industrial and Organizational Psychology Annual Conference, Seattle, WA, United States.
-        - '[**Selected as a Top Ten Poster**]'
+        - '[**Selected as a Top Ten Poster**]' # This is a string literal, kept as is.
 
     - title: Good Cop/Bad Cop- A Deep Dive into Police Officer Personality
       year: 2021
