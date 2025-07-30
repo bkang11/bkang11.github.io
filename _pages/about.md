@@ -21,4 +21,4 @@ social: true  # includes social icons at the bottom of the page
 
 Passionate. Resourceful. Driven.
 
-I am fifth-year student in the Industrial-Organizational Psychology Ph.D. program at UGA. My research areas consist of team dynamics, human-autonomy teaming, and selection/assessment.
+I am fifth-year student in the Industrial-Organizational Psychology Ph.D. program at the University of Georgia. My research areas consist of team dynamics, human-autonomy teaming, and selection/assessment.
