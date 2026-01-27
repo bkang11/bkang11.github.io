@@ -2,7 +2,7 @@ import React from 'react';
 import { Trophy } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
-const AwardBadge = () => {
+const AwardBadge = ({ label = "Best Paper Award" }) => {
     const triggerConfetti = (e) => {
         const rect = e.target.getBoundingClientRect();
         const x = (rect.left + rect.width / 2) / window.innerWidth;
@@ -23,7 +23,7 @@ const AwardBadge = () => {
             onMouseEnter={triggerConfetti}
         >
             <Trophy size={14} className="fill-current" />
-            <span>Best Paper Award</span>
+            <span>{label}</span>
         </div>
     );
 };

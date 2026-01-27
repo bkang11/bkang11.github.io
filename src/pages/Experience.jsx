@@ -5,6 +5,9 @@ import Footer from '../components/Footer';
 
 const Experience = () => {
     // Navbar component handles its own scroll logic for styling
+    useEffect(() => {
+        document.title = "Brandon Y. Kang | Experience";
+    }, []);
 
     const experienceData = [
         {

@@ -1,10 +1,14 @@
-import { BookOpen, Mail } from 'lucide-react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import AwardBadge from '../components/AwardBadge';
 import Footer from '../components/Footer';
+import { BookOpen } from 'lucide-react';
 
 const Research = () => {
     // Navbar handles scroll logic
+    useEffect(() => {
+        document.title = "Brandon Y. Kang | Research";
+    }, []);
 
     const publications = [
         {
@@ -18,7 +22,7 @@ const Research = () => {
         },
         {
             title: "The Stable Individual Differences Driving Employee Coachability Behaviours",
-            authors: "Weiss, J. A. and Outland, N. and Plummer, G. and Zervos, L. and Carmichael-Tanaka, N. and Kang, B.",
+            authors: "Weiss, J. A. and Outland, N. and Plummer, G. and Zervos, L. and Carmichael-Tanaka, N. and Kang, B. Y.",
             venue: "International Journal of Evidence Based Coaching & Mentoring",
             type: "Journal Article",
             year: "2023",
@@ -26,7 +30,7 @@ const Research = () => {
         },
         {
             title: "Applying an intersectional lens to consider disparities in historically marginalized women’s access to caregiving resources",
-            authors: "Carmichael-Tanaka N. and Kang B. Y.",
+            authors: "Carmichael-Tanaka N. and Kang, B. Y.",
             venue: "Industrial and Organizational Psychology",
             type: "Journal Article",
             year: "2023",
@@ -38,37 +42,37 @@ const Research = () => {
         {
             title: "Examining the Efficacy of Large Language Models for Thematic Content Analysis",
             year: "2026",
-            authors: "Kang, B.Y., Perez, N., Leone, S., & Bullock, B.",
+            authors: "Kang, B. Y., Perez, N., Leone, S., & Bullock, B.",
             type: "Symposium Presentation",
             venue: "SIOP Annual Conference, New Orleans, LA, USA"
         },
         {
-            title: "Getting your first I-O internship: What Graduate Students Should Know",
+            title: "Getting your first I-O internship: What graduate students should know",
             year: "2026",
-            authors: "Knight, C., Reiter-Palmon, R., Ossino, A., Brown, G., Kang, B.Y., & Johnson, L.",
+            authors: "Knight, C., Reiter-Palmon, R., Ossino, A., Brown, G., Kang, B. Y., & Johnson, L.",
             type: "Panel",
             venue: "SIOP Annual Conference, New Orleans, LA, USA"
         },
         {
             title: "Willingness to Work with AI Teammate Scale: Development and Validation",
             year: "2026",
-            authors: "Kang, B.Y., & Outland, N.",
+            authors: "Kang, B. Y., & Outland, N.",
             type: "Symposium Presentation",
             venue: "SIOP Annual Conference, New Orleans, LA, USA"
         },
         {
-            title: "Identifying Correlates of Trust in Human-Robot Teams",
+            title: "Identifying Correlates of Trust in Human-Robot Teams: The Effects of Task, Personality, and Preferences",
             year: "2025",
-            authors: "Schecter, A., Outland, N., Kang, B. Y., et al.",
+            authors: "Schecter, A., Outland, N., Kang, B. Y., Frericks, J., Johnsen, K., Doshi, P.",
             type: "Conference Presentation",
-            venue: "INGRoup Annual Conference, Rotterdam, The Netherlands"
+            venue: "Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands"
         },
         {
             title: "Exploring Human-Autonomy Trust Dynamics in a Controlled Environment",
             year: "2025",
-            authors: "Kang B.Y., et al.",
+            authors: "Kang, B. Y., Stryker, S., Frericks, J., Outland, N., Schecter, A., Johnsen, K., Doshi, P., & Challa, A.",
             type: "Symposium Presentation",
-            venue: "INGRoup Annual Conference, Rotterdam, The Netherlands"
+            venue: "Interdisciplinary Network for Group Research Annual Conference, Rotterdam, The Netherlands"
         },
         {
             title: "An Analysis of Textbook Coverage of Cultural Differences in Cognitive Tests",
@@ -80,7 +84,7 @@ const Research = () => {
         {
             title: "Prioritizing Human Sustainability in a Tooled-Up World",
             year: "2025",
-            authors: "Kang, B. Y. (Speaker), et al.",
+            authors: "Szpaichler, S. (Chair), Kang, B. Y. (Speaker), Monitto, V. (Speaker), Stryker, S. R., Squires, B., Tucker, T.",
             type: "Fishbowl",
             venue: "SIOP Annual Conference, Denver, CO, USA"
         },
@@ -92,23 +96,30 @@ const Research = () => {
             venue: "SIOP Annual Conference, Denver, CO, USA"
         },
         {
-            title: "Updates to a Computational Model of Trust Calibration",
+            title: "(A)I can be your teammate! Exploring the Impacts of AI in Organizational Teams",
             year: "2024",
-            authors: "Kang, B.Y. & Outland, N.",
+            authors: "Kang, B. Y. (Co-Chair), Outland, N. (Co-Chair), & Cooke, N. (Discussant)",
+            type: "Symposium",
+            venue: "SIOP Annual Conference, Chicago, IL, USA"
+        },
+        {
+            title: "Updates to a Computational Model of the Calibration of Trust between Human and AI Agents",
+            year: "2024",
+            authors: "Kang, B. Y. & Outland, N.",
             type: "Symposium Presentation",
             venue: "SIOP Annual Conference, Chicago, IL, USA"
         },
         {
-            title: "Happy Worker, Happy Life?",
+            title: "Happy Worker, Happy Life? A Meta-Analysis of Job Satisfaction & Subjective Well-Being",
             year: "2024",
-            authors: "Stryker, S. R., Kang, B. Y., et al.",
+            authors: "Stryker, S. R., Kang, B. Y., Lumbreras, J. M., & Hoffman, B. J.",
             type: "Poster",
             venue: "SIOP Annual Conference, Chicago, IL, USA"
         },
         {
             title: "Development and Validation of the AI Salience Scale",
             year: "2023",
-            authors: "Kang, B.Y., & Doddato, F.",
+            authors: "Kang, B. Y., & Doddato, F.",
             type: "Poster",
             venue: "SIOP Annual Conference, Chicago, IL, USA"
         },
@@ -122,7 +133,7 @@ const Research = () => {
         {
             title: "A Social Networks Approach to Leadership and Team Turnover",
             year: "2023",
-            authors: "Kim, Y.J., Hoffman, B., Outland, N., & Kang, B.Y.",
+            authors: "Kim, Y.J., Hoffman, B., Outland, N., & Kang, B. Y.",
             type: "Poster",
             venue: "SIOP Annual Conference, Boston, MA, USA"
         },
@@ -136,16 +147,38 @@ const Research = () => {
         {
             title: "The Calibration of Trust Between Humans and AI Agents",
             year: "2023",
-            authors: "Outland, N., Kang, B. Y., et al.",
+            authors: "Outland, N., Kang, B. Y., Stryker, S., & Hess, R.",
             type: "Symposium Presentation",
             venue: "SIOP Annual Conference, Boston, MA, USA"
         },
         {
-            title: "Something Old and Something New – Trust Dynamics of AI as a Teammate",
+            title: "Something Old and Something New: Trust Dynamics of Artificial Intelligence as a Teammate",
             year: "2022",
-            authors: "Outland, N. & Kang, B.Y.",
+            authors: "Outland, N. & Kang, B. Y.",
             type: "Symposium Presentation",
             venue: "Academy of Management Annual Conference, Seattle, WA, USA"
+        },
+        {
+            title: "Perceptions of Artificial Intelligence",
+            year: "2022",
+            authors: "Kang, B. Y., & Outland, N.",
+            type: "Poster",
+            venue: "SIOP Annual Conference, Seattle, WA, USA"
+        },
+        {
+            title: "Fear and Acceptance of AI at Work",
+            year: "2022",
+            authors: "Hess, R. A., Kang, B. Y., Richardson, J. M., Stryker, S. R., & Outland, N. B.",
+            type: "Poster",
+            venue: "SIOP Annual Conference, Seattle, WA, USA",
+            award: "Top 10 Poster"
+        },
+        {
+            title: "Good Cop/Bad Cop: A Deep Dive into Police Officer Personality",
+            year: "2021",
+            authors: "Harmata, R., Sherman, R., & Kang, B. Y.",
+            type: "Symposium Presentation",
+            venue: "SIOP Annual Conference, New Orleans, LA, USA"
         }
     ];
 
@@ -167,7 +200,7 @@ const Research = () => {
                             <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow">
                                 <div className="flex flex-wrap items-center gap-2 mb-2">
                                     <span className="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700 border border-red-100">{pub.type}</span>
-                                    {pub.award && <AwardBadge />}
+                                    {pub.award && <AwardBadge label={typeof pub.award === 'string' ? pub.award : undefined} />}
                                     <span className="text-sm text-slate-400 font-mono">{pub.year}</span>
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-2">
@@ -194,6 +227,7 @@ const Research = () => {
                             <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow">
                                 <div className="flex items-center gap-2 mb-2">
                                     <span className="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700 border border-red-100">{pres.type}</span>
+                                    {pres.award && <AwardBadge label={typeof pres.award === 'string' ? pres.award : undefined} />}
                                     <span className="text-sm text-slate-400 font-mono">{pres.year}</span>
                                 </div>
                                 <h3 className="text-lg font-bold text-slate-900 mb-2">{pres.title}</h3>

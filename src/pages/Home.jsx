@@ -21,6 +21,10 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     // Removed isMenuOpen, scrolled state and related useEffect/toggleMenu as Navbar component will handle its own state.
 
+    useEffect(() => {
+        document.title = "Brandon Y. Kang | Home";
+    }, []);
+
     return (
         <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-red-200">
 
@@ -166,7 +170,7 @@ const Home = () => {
                         />
                         <PublicationCard
                             title="Exploring Human-Autonomy Trust Dynamics in a Controlled Environment"
-                            authors="Kang B.Y., Stryker, S., Frericks, J., Outland, N., Schecter, A., et al."
+                            authors="Kang, B. Y., Stryker, S., Frericks, J., Outland, N., Schecter, A., et al."
                             venue="INGRoup Annual Conference 2025"
                             type="Symposium Presentation"
                         />
