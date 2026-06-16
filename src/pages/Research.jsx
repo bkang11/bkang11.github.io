@@ -1,211 +1,258 @@
-import { BookOpen, Mail } from 'lucide-react';
+import React, { useEffect, useState, useRef } from 'react';
+import confetti from 'canvas-confetti';
 import Navbar from '../components/Navbar';
-import AwardBadge from '../components/AwardBadge';
 import Footer from '../components/Footer';
 
+const publications = [
+    {
+        title: "Trust and Collaboration Testing in Controlled Human-Robot Environments",
+        authors: "Frericks, J., Kang, B. Y., Outland, N., Doshi, P., Johnsen, K., & Schecter, A.",
+        venue: "IEEE 6th International Conference on Cognitive Machine Intelligence (CogMI)",
+        type: "Conference Paper",
+        year: "2024",
+        link: "https://doi.ieeecomputersociety.org/10.1109/CogMI62246.2024.00026",
+        award: true,
+    },
+    {
+        title: "The Stable Individual Differences Driving Employee Coachability Behaviours",
+        authors: "Weiss, J. A., Outland, N., Plummer, G., Zervos, L., Carmichael-Tanaka, N., & Kang, B.",
+        venue: "International Journal of Evidence Based Coaching & Mentoring",
+        type: "Journal Article",
+        year: "2023",
+        link: "https://doi.org/10.24384/d24j-fh23",
+    },
+    {
+        title: "Applying an intersectional lens to consider disparities in historically marginalized women's access to caregiving resources",
+        authors: "Carmichael-Tanaka, N. & Kang, B. Y.",
+        venue: "Industrial and Organizational Psychology",
+        type: "Journal Article",
+        year: "2023",
+        link: "https://doi.org/10.1017/iop.2023.18",
+    },
+];
+
+const activeProjects = [
+    {
+        name: 'Willingness to Work with AI Teammate Scale',
+        status: 'In Progress',
+        target: "SIOP Annual Conference '26",
+    },
+    {
+        name: 'LLM Efficacy for Thematic Content Analysis',
+        status: 'In Progress',
+        target: "SIOP Annual Conference '26",
+    },
+    {
+        name: 'Human-Autonomy Trust Dynamics',
+        status: 'In Review',
+        target: "INGRoup Annual Conference '25",
+    },
+];
+
+const presentations = [
+    { title: "Examining the Efficacy of Large Language Models for Thematic Content Analysis", year: "2026", type: "Symposium", venue: "SIOP Annual Conference" },
+    { title: "Getting your first I-O internship: What Graduate Students Should Know", year: "2026", type: "Panel", venue: "SIOP Annual Conference" },
+    { title: "Willingness to Work with AI Teammate Scale: Development and Validation", year: "2026", type: "Symposium", venue: "SIOP Annual Conference" },
+    { title: "Identifying Correlates of Trust in Human-Robot Teams", year: "2025", type: "Presentation", venue: "INGRoup Annual Conference" },
+    { title: "Exploring Human-Autonomy Trust Dynamics in a Controlled Environment", year: "2025", type: "Symposium", venue: "INGRoup Annual Conference" },
+    { title: "An Analysis of Textbook Coverage of Cultural Differences in Cognitive Tests", year: "2025", type: "Poster", venue: "SIOP Annual Conference" },
+    { title: "Prioritizing Human Sustainability in a Tooled-Up World", year: "2025", type: "Fishbowl", venue: "SIOP Annual Conference" },
+    { title: "Designing a Virtual Environment for Examining Human-Robot Interactions", year: "2025", type: "Symposium", venue: "SIOP Annual Conference" },
+    { title: "Updates to a Computational Model of Trust Calibration", year: "2024", type: "Symposium", venue: "SIOP Annual Conference" },
+    { title: "Happy Worker, Happy Life?", year: "2024", type: "Poster", venue: "SIOP Annual Conference" },
+    { title: "Development and Validation of the AI Salience Scale", year: "2023", type: "Poster", venue: "SIOP Annual Conference" },
+    { title: "An Agent Architecture to Simulate Human-AI Trust Dynamics", year: "2023", type: "Presentation", venue: "EAWOP Small Group Meeting" },
+    { title: "A Social Networks Approach to Leadership and Team Turnover", year: "2023", type: "Poster", venue: "SIOP Annual Conference" },
+    { title: "Development of an Artificial Intelligent Teammate", year: "2023", type: "Symposium", venue: "SIOP Annual Conference" },
+    { title: "The Calibration of Trust Between Humans and AI Agents", year: "2023", type: "Symposium", venue: "SIOP Annual Conference" },
+    { title: "Something Old and Something New — Trust Dynamics of AI as a Teammate", year: "2022", type: "Symposium", venue: "Academy of Management Annual Conference" },
+];
+
+const BestPaperBadge = () => {
+    const ref = useRef(null);
+    const fire = () => {
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect) return;
+        confetti({
+            particleCount: 40,
+            spread: 70,
+            startVelocity: 22,
+            decay: 0.88,
+            scalar: 0.75,
+            ticks: 90,
+            origin: {
+                x: (rect.left + rect.width / 2) / window.innerWidth,
+                y: (rect.top + rect.height / 2) / window.innerHeight,
+            },
+            colors: ['#BA0C2F', '#FFD700', '#4CAF50', '#60A5FA', '#F97316', '#E879F9'],
+        });
+    };
+    return (
+        <span
+            ref={ref}
+            onMouseEnter={fire}
+            style={{ color: '#BA0C2F' }}
+            className="ml-2 cursor-default select-none"
+        >
+            ★ Best Paper
+        </span>
+    );
+};
+
+const presentationsByYear = presentations.reduce((acc, p) => {
+    (acc[p.year] = acc[p.year] || []).push(p);
+    return acc;
+}, {});
+const talkYears = Object.keys(presentationsByYear).sort((a, b) => b - a);
+
 const Research = () => {
-    // Navbar handles scroll logic
+    useEffect(() => {
+        document.title = "Brandon Y. Kang | Research";
+    }, []);
 
-    const publications = [
-        {
-            title: "Trust and Collaboration Testing in Controlled Human-Robot Environments",
-            authors: "Frericks, John and Kang, Brandon and Outland, Neal and Doshi, Prashant and Johnsen, Kyle and Schecter, Aaron",
-            venue: "2024 IEEE 6th International Conference on Cognitive Machine Intelligence (CogMI)",
-            type: "Conference Paper",
-            year: "2024",
-            link: "https://doi.ieeecomputersociety.org/10.1109/CogMI62246.2024.00026",
-            award: true
-        },
-        {
-            title: "The Stable Individual Differences Driving Employee Coachability Behaviours",
-            authors: "Weiss, J. A. and Outland, N. and Plummer, G. and Zervos, L. and Carmichael-Tanaka, N. and Kang, B.",
-            venue: "International Journal of Evidence Based Coaching & Mentoring",
-            type: "Journal Article",
-            year: "2023",
-            link: "https://doi.org/10.24384/d24j-fh23"
-        },
-        {
-            title: "Applying an intersectional lens to consider disparities in historically marginalized women’s access to caregiving resources",
-            authors: "Carmichael-Tanaka N. and Kang B. Y.",
-            venue: "Industrial and Organizational Psychology",
-            type: "Journal Article",
-            year: "2023",
-            link: "https://doi.org/10.1017/iop.2023.18"
-        }
-    ];
+    const [openYears, setOpenYears] = useState({ [talkYears[0]]: true });
 
-    const presentations = [
-        {
-            title: "Examining the Efficacy of Large Language Models for Thematic Content Analysis",
-            year: "2026",
-            authors: "Kang, B.Y., Perez, N., Leone, S., & Bullock, B.",
-            type: "Symposium Presentation",
-            venue: "SIOP Annual Conference, New Orleans, LA, USA"
-        },
-        {
-            title: "Getting your first I-O internship: What Graduate Students Should Know",
-            year: "2026",
-            authors: "Knight, C., Reiter-Palmon, R., Ossino, A., Brown, G., Kang, B.Y., & Johnson, L.",
-            type: "Panel",
-            venue: "SIOP Annual Conference, New Orleans, LA, USA"
-        },
-        {
-            title: "Willingness to Work with AI Teammate Scale: Development and Validation",
-            year: "2026",
-            authors: "Kang, B.Y., & Outland, N.",
-            type: "Symposium Presentation",
-            venue: "SIOP Annual Conference, New Orleans, LA, USA"
-        },
-        {
-            title: "Identifying Correlates of Trust in Human-Robot Teams",
-            year: "2025",
-            authors: "Schecter, A., Outland, N., Kang, B. Y., et al.",
-            type: "Conference Presentation",
-            venue: "INGRoup Annual Conference, Rotterdam, The Netherlands"
-        },
-        {
-            title: "Exploring Human-Autonomy Trust Dynamics in a Controlled Environment",
-            year: "2025",
-            authors: "Kang B.Y., et al.",
-            type: "Symposium Presentation",
-            venue: "INGRoup Annual Conference, Rotterdam, The Netherlands"
-        },
-        {
-            title: "An Analysis of Textbook Coverage of Cultural Differences in Cognitive Tests",
-            year: "2025",
-            authors: "Hoffman, B. J., Stryker, S. R., & Kang, B. Y.",
-            type: "Poster",
-            venue: "SIOP Annual Conference, Denver, CO, USA"
-        },
-        {
-            title: "Prioritizing Human Sustainability in a Tooled-Up World",
-            year: "2025",
-            authors: "Kang, B. Y. (Speaker), et al.",
-            type: "Fishbowl",
-            venue: "SIOP Annual Conference, Denver, CO, USA"
-        },
-        {
-            title: "Designing a Virtual Environment for Examining Human-Robot Interactions",
-            year: "2025",
-            authors: "Stryker, S. R., Kang, B. Y., Outland, N.",
-            type: "Symposium Presentation",
-            venue: "SIOP Annual Conference, Denver, CO, USA"
-        },
-        {
-            title: "Updates to a Computational Model of Trust Calibration",
-            year: "2024",
-            authors: "Kang, B.Y. & Outland, N.",
-            type: "Symposium Presentation",
-            venue: "SIOP Annual Conference, Chicago, IL, USA"
-        },
-        {
-            title: "Happy Worker, Happy Life?",
-            year: "2024",
-            authors: "Stryker, S. R., Kang, B. Y., et al.",
-            type: "Poster",
-            venue: "SIOP Annual Conference, Chicago, IL, USA"
-        },
-        {
-            title: "Development and Validation of the AI Salience Scale",
-            year: "2023",
-            authors: "Kang, B.Y., & Doddato, F.",
-            type: "Poster",
-            venue: "SIOP Annual Conference, Chicago, IL, USA"
-        },
-        {
-            title: "An Agent Architecture to Simulate Human-AI Trust Dynamics",
-            year: "2023",
-            authors: "Outland, N. & Kang, B. Y.",
-            type: "Conference Presentation",
-            venue: "EAWOP Small Group Meeting, Amsterdam, Netherlands"
-        },
-        {
-            title: "A Social Networks Approach to Leadership and Team Turnover",
-            year: "2023",
-            authors: "Kim, Y.J., Hoffman, B., Outland, N., & Kang, B.Y.",
-            type: "Poster",
-            venue: "SIOP Annual Conference, Boston, MA, USA"
-        },
-        {
-            title: "Development of an Artificial Intelligent Teammate",
-            year: "2023",
-            authors: "Outland, N. & Kang, B. Y.",
-            type: "Symposium Presentation",
-            venue: "SIOP Annual Conference, Boston, MA, USA"
-        },
-        {
-            title: "The Calibration of Trust Between Humans and AI Agents",
-            year: "2023",
-            authors: "Outland, N., Kang, B. Y., et al.",
-            type: "Symposium Presentation",
-            venue: "SIOP Annual Conference, Boston, MA, USA"
-        },
-        {
-            title: "Something Old and Something New – Trust Dynamics of AI as a Teammate",
-            year: "2022",
-            authors: "Outland, N. & Kang, B.Y.",
-            type: "Symposium Presentation",
-            venue: "Academy of Management Annual Conference, Seattle, WA, USA"
-        }
-    ];
+    const toggleYear = (year) => {
+        setOpenYears(prev => ({ ...prev, [year]: !prev[year] }));
+    };
 
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-900 font-sans selection:bg-red-200">
+        <div className="min-h-screen bg-[#F7F4EE] font-sans selection:bg-red-100">
             <Navbar />
 
-            <div className="max-w-4xl mx-auto px-6 pt-32 pb-20">
-                <div className="flex items-center gap-3 mb-10">
-                    <BookOpen className="text-red-700" size={32} />
-                    <h1 className="text-4xl font-bold text-slate-900">Research & Publications</h1>
-                </div>
+            <div className="max-w-3xl mx-auto px-7 pt-24 pb-20">
+                <h1
+                    className="font-serif text-gray-900 font-normal mb-14"
+                    style={{ fontSize: '42px', letterSpacing: '-0.02em' }}
+                >
+                    Research
+                </h1>
 
-                {/* Publications Section */}
-                <section className="mb-16">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-2">Publications</h2>
-                    <div className="space-y-6">
+                {/* Publications */}
+                <div className="mb-14">
+                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                        Publications
+                    </div>
+                    <div className="divide-y divide-[#E2DDD5]">
                         {publications.map((pub, idx) => (
-                            <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow">
-                                <div className="flex flex-wrap items-center gap-2 mb-2">
-                                    <span className="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700 border border-red-100">{pub.type}</span>
-                                    {pub.award && <AwardBadge />}
-                                    <span className="text-sm text-slate-400 font-mono">{pub.year}</span>
-                                </div>
-                                <h3 className="text-lg font-bold text-slate-900 mb-2">
+                            <div key={idx} className="py-7 grid grid-cols-[56px_1fr] gap-8">
+                                <div className="text-[11px] font-sans text-gray-400 pt-0.5">{pub.year}</div>
+                                <div>
+                                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-2">
+                                        {pub.type}
+                                        {pub.award && <BestPaperBadge />}
+                                    </div>
                                     {pub.link ? (
-                                        <a href={pub.link} target="_blank" rel="noreferrer" className="hover:text-red-700 underline decoration-slate-200 underline-offset-4 decoration-2 hover:decoration-red-700 transition-all">
+                                        <a
+                                            href={pub.link}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className={`block font-serif leading-snug mb-2 hover:opacity-70 transition-opacity ${pub.award ? '' : 'text-gray-900'}`}
+                                            style={{
+                                                fontSize: '15px',
+                                                color: pub.award ? '#BA0C2F' : undefined,
+                                            }}
+                                        >
                                             {pub.title}
                                         </a>
                                     ) : (
-                                        pub.title
+                                        <p
+                                            className="font-serif text-gray-900 leading-snug mb-2"
+                                            style={{ fontSize: '15px' }}
+                                        >
+                                            {pub.title}
+                                        </p>
                                     )}
-                                </h3>
-                                <p className="text-slate-700 mb-1 text-sm">{pub.authors}</p>
-                                <p className="text-slate-500 italic text-sm">{pub.venue}</p>
-                            </div>
-                        ))}
-                    </div>
-                </section>
-
-                {/* Presentations Section */}
-                <section>
-                    <h2 className="text-2xl font-bold text-slate-900 mb-6 border-b border-slate-200 pb-2">Presentations</h2>
-                    <div className="space-y-6">
-                        {presentations.map((pres, idx) => (
-                            <div key={idx} className="bg-white p-6 rounded-xl border border-slate-200 hover:shadow-md transition-shadow">
-                                <div className="flex items-center gap-2 mb-2">
-                                    <span className="px-2 py-0.5 rounded text-xs font-semibold bg-red-50 text-red-700 border border-red-100">{pres.type}</span>
-                                    <span className="text-sm text-slate-400 font-mono">{pres.year}</span>
+                                    <p className="text-[10px] font-sans text-gray-500 leading-relaxed">{pub.authors}</p>
+                                    <p className="text-[10px] font-sans text-gray-400 italic mt-0.5">{pub.venue}</p>
                                 </div>
-                                <h3 className="text-lg font-bold text-slate-900 mb-2">{pres.title}</h3>
-                                <p className="text-slate-700 mb-1 text-sm">{pres.authors}</p>
-                                <p className="text-slate-500 italic text-sm">{pres.venue}</p>
                             </div>
                         ))}
                     </div>
-                </section>
+                </div>
 
+                {/* Active Projects */}
+                <div className="mb-14">
+                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                        Recent Projects
+                    </div>
+                    <div
+                        className="grid md:grid-cols-3 gap-px"
+                        style={{ backgroundColor: '#E2DDD5' }}
+                    >
+                        {activeProjects.map((p, i) => (
+                            <div key={i} className="bg-[#F7F4EE] p-5">
+                                <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-3">
+                                    {p.status}
+                                </div>
+                                <div className="text-[13px] font-sans text-gray-800 leading-snug mb-3">{p.name}</div>
+                                <div className="text-[10px] font-sans text-gray-400">→ {p.target}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Conference Talks */}
+                <div>
+                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                        Talks & Presentations
+                    </div>
+                    <div>
+                        {talkYears.map((year) => {
+                            const isOpen = !!openYears[year];
+                            const items = presentationsByYear[year];
+                            return (
+                                <div key={year} className="border-t border-[#E2DDD5]">
+                                    <button
+                                        onClick={() => toggleYear(year)}
+                                        className="w-full py-3 flex items-center justify-between text-left group"
+                                    >
+                                        <span className="text-[11px] font-sans text-gray-500 group-hover:text-gray-800 transition-colors">
+                                            {year}
+                                            <span className="text-gray-400 ml-2 text-[10px]">
+                                                {items.length} {items.length === 1 ? 'talk' : 'talks'}
+                                            </span>
+                                        </span>
+                                        <span className="text-[14px] text-gray-400 leading-none group-hover:text-gray-700 transition-colors">
+                                            {isOpen ? '−' : '+'}
+                                        </span>
+                                    </button>
+                                    {isOpen && (
+                                        <div className="pb-3 divide-y divide-[#E2DDD5]">
+                                            {items.map((p, i) => (
+                                                <div key={i} className="py-3 grid grid-cols-[1fr_auto] gap-6 items-start">
+                                                    <div>
+                                                        <span className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mr-2">
+                                                            {p.type}
+                                                        </span>
+                                                        <span className="text-[11px] font-sans text-gray-700 leading-snug">
+                                                            {p.title}
+                                                        </span>
+                                                    </div>
+                                                    <div className="text-[10px] font-sans text-gray-400 whitespace-nowrap text-right">
+                                                        {p.venue.split(',')[0].replace(' Annual Conference', '').replace(' Annual', '')}
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            );
+                        })}
+                        <div className="border-t border-[#E2DDD5]" />
+                    </div>
+                    <div className="mt-4 flex justify-end">
+                        <a
+                            href="/cv.pdf"
+                            style={{ color: '#BA0C2F' }}
+                            className="text-[11px] font-sans hover:opacity-70 transition-opacity"
+                        >
+                            Full CV →
+                        </a>
+                    </div>
+                </div>
             </div>
-            {/* Footer */}
+
             <Footer />
         </div>
     );
