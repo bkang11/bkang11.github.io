@@ -65,6 +65,27 @@ const experienceData = [
     },
 ];
 
+const awardsData = [
+    {
+        year: 'Spring 2026',
+        name: 'ASCEND Award',
+        org: 'Franklin College of Arts and Sciences, University of Georgia',
+        description: 'Awarded a $3,000 grant to support professional development and career exploration beyond academia.',
+    },
+    {
+        year: 'March 2026',
+        name: 'SIOP Student Travel Award',
+        org: 'Society for Industrial and Organizational Psychology',
+        description: 'Awarded a $500 travel grant to present accepted research at the SIOP 2026 Annual Conference.',
+    },
+    {
+        year: 'October 2024',
+        name: 'IEEE CogMI Best Paper Award',
+        org: 'IEEE Sixth International Conference on Cognitive Machine Intelligence',
+        description: 'Recognized as one of two Best Paper Award recipients, selected by the program committee from all submitted works.',
+    },
+];
+
 const educationData = [
     {
         year: 'exp. 2027',
@@ -101,7 +122,7 @@ const Experience = () => {
                 </h1>
 
                 {/* Section label */}
-                <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
                     Industry
                 </div>
 
@@ -109,7 +130,7 @@ const Experience = () => {
                 <div className="divide-y divide-[#E2DDD5]">
                     {experienceData.map((item, idx) => (
                         <div key={idx} className="py-8 grid grid-cols-[80px_1fr] gap-8">
-                            <div className="text-[11px] font-sans text-gray-400 pt-0.5">
+                            <div className="text-[13px] font-sans text-gray-400 pt-0.5">
                                 {item.year}
                                 {item.current && (
                                     <span
@@ -127,12 +148,12 @@ const Experience = () => {
                                 >
                                     {item.company}
                                 </div>
-                                <div className="text-[11px] font-sans text-gray-500 mb-0.5">{item.role}</div>
-                                <div className="text-[10px] font-sans text-gray-400 mb-4">{item.dates}</div>
+                                <div className="text-[13px] font-sans text-gray-500 mb-0.5">{item.role}</div>
+                                <div className="text-[12px] font-sans text-gray-400 mb-4">{item.dates}</div>
                                 {item.bullets && (
                                     <ul className="space-y-1.5">
                                         {item.bullets.map((b, i) => (
-                                            <li key={i} className="flex gap-3 text-[12px] font-sans text-gray-600 leading-relaxed">
+                                            <li key={i} className="flex gap-3 text-[14px] font-sans text-gray-600 leading-relaxed">
                                                 <span className="text-[#E2DDD5] shrink-0 mt-px">—</span>
                                                 <span>{b}</span>
                                             </li>
@@ -146,16 +167,35 @@ const Experience = () => {
 
                 {/* Education */}
                 <div className="mt-14">
-                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                    <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
                         Education
                     </div>
                     <div className="divide-y divide-[#E2DDD5]">
                         {educationData.map((item, idx) => (
                             <div key={idx} className="py-6 grid grid-cols-[80px_1fr] gap-8">
-                                <div className="text-[11px] font-sans text-gray-400 pt-0.5">{item.year}</div>
+                                <div className="text-[13px] font-sans text-gray-400 pt-0.5">{item.year}</div>
                                 <div>
-                                    <div className="text-[13px] font-sans text-gray-800 leading-snug mb-0.5">{item.degree}</div>
-                                    <div className="text-[11px] font-sans text-gray-400">{item.school}</div>
+                                    <div className="text-[15px] font-sans text-gray-800 leading-snug mb-0.5">{item.degree}</div>
+                                    <div className="text-[13px] font-sans text-gray-400">{item.school}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Honors & Awards */}
+                <div className="mt-14">
+                    <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                        Honors &amp; Awards
+                    </div>
+                    <div className="divide-y divide-[#E2DDD5]">
+                        {awardsData.map((item, idx) => (
+                            <div key={idx} className="py-6 grid grid-cols-[80px_1fr] gap-8">
+                                <div className="text-[13px] font-sans text-gray-400 pt-0.5 leading-snug">{item.year}</div>
+                                <div>
+                                    <div className="text-[15px] font-sans text-gray-800 leading-snug mb-0.5">{item.name}</div>
+                                    <div className="text-[13px] font-sans text-gray-400 mb-2">{item.org}</div>
+                                    <p className="text-[14px] font-sans text-gray-600 leading-relaxed">{item.description}</p>
                                 </div>
                             </div>
                         ))}

@@ -6,6 +6,7 @@ const Navbar = () => {
     const isHome = location.pathname === '/';
 
     const links = [
+        { name: 'About', href: '/about' },
         { name: 'Experience', href: '/experience' },
         { name: 'Research', href: '/research' },
         { name: 'CV', href: '/cv.pdf', external: true },
@@ -20,11 +21,11 @@ const Navbar = () => {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F7F4EE]/95 backdrop-blur-sm border-b border-[#E2DDD5]/60">
             <div className="max-w-3xl mx-auto px-7 py-3.5 flex justify-between items-center">
                 <div className="flex items-center">
-                    <Link to="/" className="text-[10px] font-sans text-gray-700 hover:text-gray-900 transition-colors tracking-tight">
+                    <Link to="/" className="text-[12px] font-sans text-gray-700 hover:text-gray-900 transition-colors tracking-tight">
                         Brandon Y. Kang
                     </Link>
                     {isHome && (
-                        <span className="text-[10px] font-sans text-gray-400 hidden sm:inline">
+                        <span className="text-[12px] font-sans text-gray-400 hidden sm:inline">
                             {' '}·{' '}
                             <a
                                 href="mailto:brandonkang11@gmail.com"
@@ -41,7 +42,7 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
-                                className="text-[10px] font-sans text-gray-400 hover:text-gray-700 transition-colors"
+                                className="text-[12px] font-sans text-gray-400 hover:text-gray-700 transition-colors"
                             >
                                 {link.name}
                             </a>
@@ -49,7 +50,7 @@ const Navbar = () => {
                             <Link
                                 key={link.name}
                                 to={link.href}
-                                className={`text-[10px] font-sans ${linkClass(link.href)}`}
+                                className={`text-[12px] font-sans ${linkClass(link.href)}`}
                             >
                                 {link.name}
                             </Link>
