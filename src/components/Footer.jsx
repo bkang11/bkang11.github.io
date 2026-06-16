@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="border-t border-[#E2DDD5] bg-[#F7F4EE]">
             <div className="max-w-3xl mx-auto px-7 py-5 flex justify-between items-center gap-4">
-                <p className="text-[10px] font-sans text-gray-400 leading-relaxed">
+                <p className="text-[12px] font-sans text-gray-400 leading-relaxed">
                     Brandon Y. Kang{' '}
                     <span className="text-[#E2DDD5]">·</span>{' '}
                     PhD student, I-O Psychology, University of Georgia
@@ -14,7 +14,7 @@ const Footer = () => {
                         href="https://www.linkedin.com/in/bkang11"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[10px] font-sans text-gray-400 hover:text-gray-700 transition-colors"
+                        className="text-[12px] font-sans text-gray-400 hover:text-gray-700 transition-colors"
                     >
                         LinkedIn
                     </a>
@@ -22,7 +22,7 @@ const Footer = () => {
                         href="https://orcid.org/0000-0002-2088-5649"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[10px] font-sans text-gray-400 hover:text-gray-700 transition-colors"
+                        className="text-[12px] font-sans text-gray-400 hover:text-gray-700 transition-colors"
                     >
                         ORCID
                     </a>

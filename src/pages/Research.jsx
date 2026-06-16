@@ -3,6 +3,15 @@ import confetti from 'canvas-confetti';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
+const technicalReports = [
+    {
+        title: 'Development of A Bi-Directional Computational Model of Dyadic Trust in Human-AI Infantry Teaming Contexts',
+        authors: 'Outland, N., Doshi, P., Camelio, J., Schechter, A., Navare, B., Kang, B., Stryker, S., Frericks, J., Hicks, J., & Fouse, A.',
+        venue: 'CCDC Data and Analysis Center',
+        year: '2023',
+    },
+];
+
 const publications = [
     {
         title: "Trust and Collaboration Testing in Controlled Human-Robot Environments",
@@ -50,23 +59,44 @@ const activeProjects = [
 ];
 
 const presentations = [
-    { title: "Examining the Efficacy of Large Language Models for Thematic Content Analysis", year: "2026", type: "Symposium", venue: "SIOP Annual Conference" },
-    { title: "Getting your first I-O internship: What Graduate Students Should Know", year: "2026", type: "Panel", venue: "SIOP Annual Conference" },
-    { title: "Willingness to Work with AI Teammate Scale: Development and Validation", year: "2026", type: "Symposium", venue: "SIOP Annual Conference" },
-    { title: "Identifying Correlates of Trust in Human-Robot Teams", year: "2025", type: "Presentation", venue: "INGRoup Annual Conference" },
-    { title: "Exploring Human-Autonomy Trust Dynamics in a Controlled Environment", year: "2025", type: "Symposium", venue: "INGRoup Annual Conference" },
-    { title: "An Analysis of Textbook Coverage of Cultural Differences in Cognitive Tests", year: "2025", type: "Poster", venue: "SIOP Annual Conference" },
-    { title: "Prioritizing Human Sustainability in a Tooled-Up World", year: "2025", type: "Fishbowl", venue: "SIOP Annual Conference" },
-    { title: "Designing a Virtual Environment for Examining Human-Robot Interactions", year: "2025", type: "Symposium", venue: "SIOP Annual Conference" },
-    { title: "Updates to a Computational Model of Trust Calibration", year: "2024", type: "Symposium", venue: "SIOP Annual Conference" },
-    { title: "Happy Worker, Happy Life?", year: "2024", type: "Poster", venue: "SIOP Annual Conference" },
-    { title: "Development and Validation of the AI Salience Scale", year: "2023", type: "Poster", venue: "SIOP Annual Conference" },
-    { title: "An Agent Architecture to Simulate Human-AI Trust Dynamics", year: "2023", type: "Presentation", venue: "EAWOP Small Group Meeting" },
-    { title: "A Social Networks Approach to Leadership and Team Turnover", year: "2023", type: "Poster", venue: "SIOP Annual Conference" },
-    { title: "Development of an Artificial Intelligent Teammate", year: "2023", type: "Symposium", venue: "SIOP Annual Conference" },
-    { title: "The Calibration of Trust Between Humans and AI Agents", year: "2023", type: "Symposium", venue: "SIOP Annual Conference" },
-    { title: "Something Old and Something New — Trust Dynamics of AI as a Teammate", year: "2022", type: "Symposium", venue: "Academy of Management Annual Conference" },
+    // 2026
+    { title: 'Examining the Efficacy of Large Language Models for Thematic Content Analysis', year: '2026', type: 'Symposium', venue: 'SIOP Annual Conference' },
+    { title: 'Getting your first I-O internship: What Graduate Students Should Know', year: '2026', type: 'Panel', venue: 'SIOP Annual Conference' },
+    { title: 'Willingness to Work with AI Teammate Scale: Development and Validation', year: '2026', type: 'Symposium', venue: 'SIOP Annual Conference' },
+    // 2025
+    { title: 'AI integration in financial services: How task attributes, collaboration modes, and experience shape trust', year: '2025', type: 'Panel', venue: 'AFS Australia–New Zealand Symposium' },
+    { title: 'AI integration in financial services: How task attributes, collaboration modes, and experience shape trust', year: '2025', type: 'Panel', venue: 'CFP Board Connections Conference' },
+    { title: 'Trust in AI in financial planning: A psychological perspective on tasks and collaboration', year: '2025', type: 'Presentation', venue: 'World Finance Conference' },
+    { title: 'Identifying Correlates of Trust in Human-Robot Teams', year: '2025', type: 'Presentation', venue: 'INGRoup Annual Conference' },
+    { title: 'Exploring Human-Autonomy Trust Dynamics in a Controlled Environment', year: '2025', type: 'Symposium', venue: 'INGRoup Annual Conference' },
+    { title: 'An Analysis of Textbook Coverage of Cultural Differences in Cognitive Tests', year: '2025', type: 'Poster', venue: 'SIOP Annual Conference' },
+    { title: 'Prioritizing Human Sustainability in a Tooled-Up World', year: '2025', type: 'Fishbowl', venue: 'SIOP Annual Conference' },
+    { title: 'Designing a Virtual Environment for Examining Human-Robot Interactions', year: '2025', type: 'Symposium', venue: 'SIOP Annual Conference' },
+    // 2024
+    { title: '(A)I can be your teammate! Exploring the Impacts of AI in Organizational Teams', year: '2024', type: 'Symposium (Co-Chair)', venue: 'SIOP Annual Conference' },
+    { title: 'Updates to a Computational Model of Trust Calibration', year: '2024', type: 'Symposium', venue: 'SIOP Annual Conference' },
+    { title: 'Development and Validation of the Artificial Intelligence Salience Scale', year: '2024', type: 'Poster', venue: 'SIOP Annual Conference' },
+    { title: 'Happy Worker, Happy Life?', year: '2024', type: 'Poster', venue: 'SIOP Annual Conference' },
+    // 2023
+    { title: 'An Agent Architecture to Simulate Human-AI Trust Dynamics', year: '2023', type: 'Presentation', venue: 'EAWOP Small Group Meeting' },
+    { title: 'A Social Networks Approach to Leadership and Team Turnover', year: '2023', type: 'Poster', venue: 'SIOP Annual Conference' },
+    { title: 'Development of an Artificial Intelligent Teammate', year: '2023', type: 'Symposium', venue: 'SIOP Annual Conference' },
+    { title: 'The Calibration of Trust Between Humans and AI Agents', year: '2023', type: 'Symposium', venue: 'SIOP Annual Conference' },
+    // 2022
+    { title: 'Something Old and Something New — Trust Dynamics of AI as a Teammate', year: '2022', type: 'Symposium', venue: 'Academy of Management Annual Conference' },
+    { title: 'Perceptions of Artificial Intelligence', year: '2022', type: 'Poster', venue: 'SIOP Annual Conference' },
+    { title: 'Fear and Acceptance of AI at Work', year: '2022', type: 'Poster', venue: 'SIOP Annual Conference', topTen: true },
+    // 2021
+    { title: 'Good Cop/Bad Cop: A Deep Dive into Police Officer Personality', year: '2021', type: 'Symposium', venue: 'SIOP Annual Conference' },
+    // 2020
+    { title: 'The Moderating Effect of Promotion Expectations on Job Satisfaction by Industry Type', year: '2020', type: 'Poster', venue: 'UGA CURO Symposium' },
 ];
+
+const TopTenBadge = () => (
+    <span style={{ color: '#B45309' }} className="ml-2 cursor-default select-none">
+        ★ Top Ten Poster
+    </span>
+);
 
 const BestPaperBadge = () => {
     const ref = useRef(null);
@@ -130,7 +160,7 @@ const Research = () => {
 
                 {/* Publications */}
                 <div className="mb-14">
-                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                    <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
                         Publications
                     </div>
                     <div className="divide-y divide-[#E2DDD5]">
@@ -138,7 +168,7 @@ const Research = () => {
                             <div key={idx} className="py-7 grid grid-cols-[56px_1fr] gap-8">
                                 <div className="text-[11px] font-sans text-gray-400 pt-0.5">{pub.year}</div>
                                 <div>
-                                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-2">
+                                    <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-2">
                                         {pub.type}
                                         {pub.award && <BestPaperBadge />}
                                     </div>
@@ -163,8 +193,32 @@ const Research = () => {
                                             {pub.title}
                                         </p>
                                     )}
-                                    <p className="text-[10px] font-sans text-gray-500 leading-relaxed">{pub.authors}</p>
-                                    <p className="text-[10px] font-sans text-gray-400 italic mt-0.5">{pub.venue}</p>
+                                    <p className="text-[12px] font-sans text-gray-500 leading-relaxed">{pub.authors}</p>
+                                    <p className="text-[12px] font-sans text-gray-400 italic mt-0.5">{pub.venue}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Technical Reports */}
+                <div className="mb-14">
+                    <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                        Technical Reports
+                    </div>
+                    <div className="divide-y divide-[#E2DDD5]">
+                        {technicalReports.map((rep, idx) => (
+                            <div key={idx} className="py-7 grid grid-cols-[56px_1fr] gap-8">
+                                <div className="text-[11px] font-sans text-gray-400 pt-0.5">{rep.year}</div>
+                                <div>
+                                    <p
+                                        className="font-serif text-gray-900 leading-snug mb-2"
+                                        style={{ fontSize: '15px' }}
+                                    >
+                                        {rep.title}
+                                    </p>
+                                    <p className="text-[12px] font-sans text-gray-500 leading-relaxed">{rep.authors}</p>
+                                    <p className="text-[12px] font-sans text-gray-400 italic mt-0.5">{rep.venue}</p>
                                 </div>
                             </div>
                         ))}
@@ -173,7 +227,7 @@ const Research = () => {
 
                 {/* Active Projects */}
                 <div className="mb-14">
-                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                    <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
                         Recent Projects
                     </div>
                     <div
@@ -182,11 +236,11 @@ const Research = () => {
                     >
                         {activeProjects.map((p, i) => (
                             <div key={i} className="bg-[#F7F4EE] p-5">
-                                <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-3">
+                                <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-3">
                                     {p.status}
                                 </div>
-                                <div className="text-[13px] font-sans text-gray-800 leading-snug mb-3">{p.name}</div>
-                                <div className="text-[10px] font-sans text-gray-400">→ {p.target}</div>
+                                <div className="text-[15px] font-sans text-gray-800 leading-snug mb-3">{p.name}</div>
+                                <div className="text-[12px] font-sans text-gray-400">→ {p.target}</div>
                             </div>
                         ))}
                     </div>
@@ -194,7 +248,7 @@ const Research = () => {
 
                 {/* Conference Talks */}
                 <div>
-                    <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-6">
+                    <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
                         Talks & Presentations
                     </div>
                     <div>
@@ -207,7 +261,7 @@ const Research = () => {
                                         onClick={() => toggleYear(year)}
                                         className="w-full py-3 flex items-center justify-between text-left group"
                                     >
-                                        <span className="text-[11px] font-sans text-gray-500 group-hover:text-gray-800 transition-colors">
+                                        <span className="text-[13px] font-sans text-gray-500 group-hover:text-gray-800 transition-colors">
                                             {year}
                                             <span className="text-gray-400 ml-2 text-[10px]">
                                                 {items.length} {items.length === 1 ? 'talk' : 'talks'}
@@ -222,14 +276,15 @@ const Research = () => {
                                             {items.map((p, i) => (
                                                 <div key={i} className="py-3 grid grid-cols-[1fr_auto] gap-6 items-start">
                                                     <div>
-                                                        <span className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mr-2">
+                                                        <span className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mr-2">
                                                             {p.type}
                                                         </span>
-                                                        <span className="text-[11px] font-sans text-gray-700 leading-snug">
+                                                        {p.topTen && <TopTenBadge />}
+                                                        <span className="text-[13px] font-sans text-gray-700 leading-snug">
                                                             {p.title}
                                                         </span>
                                                     </div>
-                                                    <div className="text-[10px] font-sans text-gray-400 whitespace-nowrap text-right">
+                                                    <div className="text-[12px] font-sans text-gray-400 whitespace-nowrap text-right">
                                                         {p.venue.split(',')[0].replace(' Annual Conference', '').replace(' Annual', '')}
                                                     </div>
                                                 </div>
@@ -245,7 +300,7 @@ const Research = () => {
                         <a
                             href="/cv.pdf"
                             style={{ color: '#BA0C2F' }}
-                            className="text-[11px] font-sans hover:opacity-70 transition-opacity"
+                            className="text-[13px] font-sans hover:opacity-70 transition-opacity"
                         >
                             Full CV →
                         </a>

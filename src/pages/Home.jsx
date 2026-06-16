@@ -25,7 +25,7 @@ const Home = () => {
                             the <span style={{ color: '#BA0C2F' }}>future of work.</span>
                         </h1>
 
-                        <p className="mt-6 text-[14px] font-sans text-gray-500 leading-relaxed">
+                        <p className="mt-6 text-[16px] font-sans text-gray-500 leading-relaxed">
                             I study how people and AI systems work together — building measurement tools,
                             running experiments, and shipping research at the intersection of psychology
                             and organizational life.
@@ -45,26 +45,26 @@ const Home = () => {
 
                 <div className="mt-10 pt-8 border-t border-[#E2DDD5] grid grid-cols-1 sm:grid-cols-3 gap-8">
                     <div>
-                        <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-2">
+                        <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-2">
                             Human-AI Collaboration
                         </div>
-                        <p className="text-[12px] font-sans text-gray-500 leading-relaxed">
+                        <p className="text-[14px] font-sans text-gray-500 leading-relaxed">
                             Trust calibration, AI adoption barriers, and designing effective human-AI teams.
                         </p>
                     </div>
                     <div>
-                        <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-2">
+                        <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-2">
                             Team Dynamics
                         </div>
-                        <p className="text-[12px] font-sans text-gray-500 leading-relaxed">
+                        <p className="text-[14px] font-sans text-gray-500 leading-relaxed">
                             How composition, leadership, and network structure drive team performance and turnover.
                         </p>
                     </div>
                     <div>
-                        <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-2">
+                        <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-2">
                             People Analytics
                         </div>
-                        <p className="text-[12px] font-sans text-gray-500 leading-relaxed">
+                        <p className="text-[14px] font-sans text-gray-500 leading-relaxed">
                             Leveraging data to inform talent decisions, scale measurement, and organizational strategy.
                         </p>
                     </div>
@@ -75,22 +75,22 @@ const Home = () => {
             <div className="border-t border-[#E2DDD5] max-w-3xl mx-auto w-full px-7 py-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div>
-                        <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-1.5">where</div>
-                        <div className="text-[11px] font-sans text-gray-600 leading-relaxed">
+                        <div className="text-[12px] font-sans uppercase tracking-widest text-gray-400 mb-1.5">where</div>
+                        <div className="text-[13px] font-sans text-gray-600 leading-relaxed">
                             PhD student · I-O Psychology<br />
                             University of Georgia
                         </div>
                     </div>
                     <div>
-                        <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-1.5">current</div>
-                        <div className="text-[11px] font-sans text-gray-600 leading-relaxed">
+                        <div className="text-[12px] font-sans uppercase tracking-widest text-gray-400 mb-1.5">current</div>
+                        <div className="text-[13px] font-sans text-gray-600 leading-relaxed">
                             Adobe · People Data Scientist<br />
                             Summer 2026
                         </div>
                     </div>
                     <div>
-                        <div className="text-[9px] font-sans uppercase tracking-widest text-gray-400 mb-1.5">published</div>
-                        <div className="text-[11px] font-sans text-gray-600 leading-relaxed">
+                        <div className="text-[12px] font-sans uppercase tracking-widest text-gray-400 mb-1.5">published</div>
+                        <div className="text-[13px] font-sans text-gray-600 leading-relaxed">
                             ★ IEEE CogMI Best Paper<br />
                             2024
                         </div>
@@ -99,7 +99,7 @@ const Home = () => {
                         <a
                             href="mailto:brandonkang11@gmail.com"
                             style={{ color: '#BA0C2F' }}
-                            className="text-[11px] font-sans hover:opacity-70 transition-opacity"
+                            className="text-[13px] font-sans hover:opacity-70 transition-opacity"
                         >
                             Open to industry →
                         </a>
