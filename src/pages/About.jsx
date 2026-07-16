@@ -1,7 +1,13 @@
-import React, { useEffect } from 'react';
+// About.jsx — patched: clicking New Zealand on the map opens the secret gate.
+// Changes from your original (3 spots, marked with // SECRET GATE):
+//   1. import { SecretGateModal } + useState
+//   2. Geography for New Zealand gets onClick + pointer cursor
+//   3. <SecretGateModal /> rendered at the bottom
+import React, { useEffect, useState } from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { SecretGateModal } from '../components/SecretGate'; // SECRET GATE
 
 const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
 
@@ -49,6 +55,8 @@ const travelCities = [
 ];
 
 const About = () => {
+    const [gateOpen, setGateOpen] = useState(false); // SECRET GATE
+
     useEffect(() => {
         document.title = 'Brandon Y. Kang | About';
     }, []);
@@ -102,20 +110,29 @@ const About = () => {
                         >
                             <Geographies geography={geoUrl}>
                                 {({ geographies }) =>
-                                    geographies.map((geo) => (
-                                        <Geography
-                                            key={geo.rsmKey}
-                                            geography={geo}
-                                            fill="#CCC8C0"
-                                            stroke="#E8E4DC"
-                                            strokeWidth={0.5}
-                                            style={{
-                                                default: { outline: 'none' },
-                                                hover: { outline: 'none', fill: '#CCC8C0' },
-                                                pressed: { outline: 'none' },
-                                            }}
-                                        />
-                                    ))
+                                    geographies.map((geo) => {
+                                        // SECRET GATE: New Zealand opens the door
+                                        const isNZ = geo.properties.name === 'New Zealand';
+                                        return (
+                                            <Geography
+                                                key={geo.rsmKey}
+                                                geography={geo}
+                                                fill="#CCC8C0"
+                                                stroke="#E8E4DC"
+                                                strokeWidth={0.5}
+                                                onClick={isNZ ? () => setGateOpen(true) : undefined}
+                                                style={{
+                                                    default: { outline: 'none' },
+                                                    hover: {
+                                                        outline: 'none',
+                                                        fill: '#CCC8C0',
+                                                        cursor: isNZ ? 'pointer' : 'default',
+                                                    },
+                                                    pressed: { outline: 'none' },
+                                                }}
+                                            />
+                                        );
+                                    })
                                 }
                             </Geographies>
 
@@ -181,6 +198,9 @@ const About = () => {
             </div>
 
             <Footer />
+
+            {/* SECRET GATE */}
+            <SecretGateModal open={gateOpen} onClose={() => setGateOpen(false)} />
         </div>
     );
 };
