@@ -5,11 +5,34 @@
 //   3. <SecretGateModal /> rendered at the bottom
 import React, { useEffect, useState } from 'react';
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps';
+import { Focusable, Pressable, Tooltip, TooltipTrigger } from 'react-aria-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { SecretGateModal } from '../components/SecretGate'; // SECRET GATE
 
 const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+
+// Every marker carried a `name` that never rendered — 31 anonymous dots. Wrapping
+// each in a TooltipTrigger surfaces it on hover and on keyboard focus.
+// eslint-disable-next-line react/prop-types
+const MapMarker = ({ name, coords, kind, children }) => (
+    <Marker coordinates={coords}>
+        <TooltipTrigger delay={150} closeDelay={0}>
+            <Focusable>
+                <g className="map-marker" role="img" aria-label={`${name} — ${kind}`}>
+                    {children}
+                </g>
+            </Focusable>
+            <Tooltip
+                offset={10}
+                className="px-2 py-1 text-[11px] font-sans text-[#F7F4EE] rounded-sm shadow-lg"
+                style={{ background: '#1E1A14' }}
+            >
+                {name}
+            </Tooltip>
+        </TooltipTrigger>
+    </Marker>
+);
 
 const presentationCities = [
     { name: 'New Orleans, LA', coords: [-90.07, 29.95] },
@@ -113,14 +136,21 @@ const About = () => {
                                     geographies.map((geo) => {
                                         // SECRET GATE: New Zealand opens the door
                                         const isNZ = geo.properties.name === 'New Zealand';
-                                        return (
+                                        // Pressable so the easter egg answers to keyboard and
+                                        // touch, not just a mouse click on a bare <path>.
+                                        // Geography spreads unknown props onto its <path> and
+                                        // forwards its ref, so Pressable's props land intact.
+                                        const shape = (
                                             <Geography
-                                                key={geo.rsmKey}
                                                 geography={geo}
                                                 fill="#CCC8C0"
                                                 stroke="#E8E4DC"
                                                 strokeWidth={0.5}
-                                                onClick={isNZ ? () => setGateOpen(true) : undefined}
+                                                {...(isNZ && {
+                                                    role: 'button',
+                                                    'aria-label': 'New Zealand',
+                                                    className: 'map-marker',
+                                                })}
                                                 style={{
                                                     default: { outline: 'none' },
                                                     hover: {
@@ -132,37 +162,44 @@ const About = () => {
                                                 }}
                                             />
                                         );
+                                        return isNZ ? (
+                                            <Pressable key={geo.rsmKey} onPress={() => setGateOpen(true)}>
+                                                {shape}
+                                            </Pressable>
+                                        ) : (
+                                            <React.Fragment key={geo.rsmKey}>{shape}</React.Fragment>
+                                        );
                                     })
                                 }
                             </Geographies>
 
                             {/* Travel diamonds (drawn first, underneath) */}
                             {travelCities.map(({ name, coords }) => (
-                                <Marker key={`travel-${name}`} coordinates={coords}>
+                                <MapMarker key={`travel-${name}`} name={name} coords={coords} kind="travel">
                                     <path d="M0,-4 L4,0 L0,4 L-4,0 Z" fill="#B8883C" opacity={0.85} />
-                                </Marker>
+                                </MapMarker>
                             ))}
 
                             {/* Work rings */}
                             {workCities.map(({ name, coords }) => (
-                                <Marker key={`work-${name}`} coordinates={coords}>
+                                <MapMarker key={`work-${name}`} name={name} coords={coords} kind="industry">
                                     <circle r={5.5} fill="none" stroke="#6B7280" strokeWidth={1.5} />
-                                </Marker>
+                                </MapMarker>
                             ))}
 
                             {/* Presentation dots */}
                             {presentationCities.map(({ name, coords }) => (
-                                <Marker key={`pres-${name}`} coordinates={coords}>
+                                <MapMarker key={`pres-${name}`} name={name} coords={coords} kind="conference">
                                     <circle r={3.5} fill="#BA0C2F" opacity={0.9} />
-                                </Marker>
+                                </MapMarker>
                             ))}
 
                             {/* Home marker */}
                             {homeCities.map(({ name, coords }) => (
-                                <Marker key={`home-${name}`} coordinates={coords}>
+                                <MapMarker key={`home-${name}`} name={name} coords={coords} kind="home">
                                     <circle r={5.5} fill="#BA0C2F" />
                                     <circle r={9} fill="none" stroke="#BA0C2F" strokeWidth={1} opacity={0.35} />
-                                </Marker>
+                                </MapMarker>
                             ))}
                         </ComposableMap>
                     </div>

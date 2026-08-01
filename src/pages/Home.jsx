@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
+import NewsTicker from '../components/NewsTicker';
 import Footer from '../components/Footer';
 
 const Home = () => {
@@ -11,9 +12,15 @@ const Home = () => {
         <div className="min-h-screen bg-[#F7F4EE] flex flex-col font-sans selection:bg-red-100">
             <Navbar />
 
+            {/* --nav-h is measured and published by Navbar, so this stays correct
+                when the links wrap to a second row on narrow screens. */}
+            <div className="mt-[var(--nav-h)]">
+                <NewsTicker />
+            </div>
+
             {/* Hero */}
-            <div className="flex-1 flex flex-col justify-center max-w-3xl mx-auto w-full px-7 pt-24 pb-10">
-                <div className="flex gap-10 items-start">
+            <div className="flex-1 flex flex-col justify-center max-w-3xl mx-auto w-full px-7 pt-12 pb-10">
+                <div className="flex flex-col sm:flex-row gap-8 sm:gap-10 items-start">
                     {/* Left: headline + bio */}
                     <div className="flex-1 min-w-0">
                         <h1
@@ -32,13 +39,18 @@ const Home = () => {
                         </p>
                     </div>
 
-                    {/* Right: vertical photo */}
-                    <div className="shrink-0 hidden sm:block overflow-hidden" style={{ width: '200px', height: '300px' }}>
+                    {/* Right on desktop, stacked under the bio on mobile.
+                        The 1.85x crop is done by oversizing the image rather than
+                        with transform: scale(). Same framing — the box keeps the
+                        container's aspect ratio, so object-cover picks the same
+                        region — but scaling a clipped layer left a 1px seam where
+                        the compositor's raster tiles met. */}
+                    <div className="shrink-0 relative overflow-hidden w-[165px] h-[220px] sm:w-[200px] sm:h-[300px]">
                         <img
                             src="/winterpic.jpeg"
                             alt="Brandon Y. Kang"
-                            className="w-full h-full object-cover"
-                            style={{ objectPosition: 'center 55%', transform: 'scale(1.85)', transformOrigin: 'center 55%' }}
+                            className="absolute w-[185%] h-[185%] max-w-none object-cover"
+                            style={{ left: '-42.5%', top: '-46.75%', objectPosition: 'center 55%' }}
                         />
                     </div>
                 </div>

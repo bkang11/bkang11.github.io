@@ -1,3 +1,94 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    /* Overwritten with the measured height by Navbar; this is the pre-hydration
+       fallback so nothing sits under the fixed bar on first paint. */
+    :root {
+        --nav-h: 47px;
+    }
+}
+
+@layer components {
+    /* Secret gate overlay — fades in/out via RAC's data-entering/data-exiting. */
+    .secret-gate-overlay[data-entering] {
+        animation: gate-fade 180ms ease-out;
+    }
+
+    .secret-gate-overlay[data-exiting] {
+        animation: gate-fade 140ms ease-in reverse;
+    }
+
+    @keyframes gate-fade {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    /* RAC sets --disclosure-panel-height on the panel so it can animate open. */
+    .talk-year-panel,
+    .exp-panel {
+        height: var(--disclosure-panel-height);
+        overflow: hidden;
+        transition: height 250ms ease;
+    }
+
+    /* News ticker. Two copies of the item list sit side by side in the track, so
+       translating -50% lands on the start of copy two and the loop is seamless. */
+    .ticker-track {
+        display: flex;
+        width: max-content;
+        animation: ticker-scroll var(--ticker-duration, 45s) linear infinite;
+    }
+
+    /* WCAG 2.2.2 — moving content must be stoppable. Hover and focus cover the
+       incidental cases; the button covers the deliberate one. */
+    .ticker:hover .ticker-track,
+    .ticker:focus-within .ticker-track,
+    .ticker[data-paused='true'] .ticker-track {
+        animation-play-state: paused;
+    }
+
+    @keyframes ticker-scroll {
+        from { transform: translateX(0); }
+        to   { transform: translateX(-50%); }
+    }
+
+    /* SVG map markers get a real focus ring — the browser default is invisible
+       against the map fill. */
+    .map-marker {
+        outline: none;
+        cursor: default;
+    }
+
+    .map-marker:focus-visible {
+        outline: 2px solid #1E1A14;
+        outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .secret-gate-overlay[data-entering],
+        .secret-gate-overlay[data-exiting] {
+            animation: none;
+        }
+
+        .talk-year-panel,
+        .exp-panel {
+            transition: none;
+        }
+
+        /* No auto-scroll. The strip becomes an ordinary horizontal scroller, and
+           the duplicate copy is dropped since it would just read as repetition. */
+        .ticker-track {
+            animation: none;
+        }
+
+        .ticker-dup {
+            display: none;
+        }
+
+        .ticker-viewport {
+            overflow-x: auto;
+        }
+    }
+}

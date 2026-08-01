@@ -1,5 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import confetti from 'canvas-confetti';
+import {
+    Button,
+    Disclosure,
+    DisclosureGroup,
+    DisclosurePanel,
+    Heading,
+} from 'react-aria-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -37,24 +44,6 @@ const publications = [
         type: "Journal Article",
         year: "2023",
         link: "https://doi.org/10.1017/iop.2023.18",
-    },
-];
-
-const activeProjects = [
-    {
-        name: 'Willingness to Work with AI Teammate Scale',
-        status: 'In Progress',
-        target: "SIOP Annual Conference '26",
-    },
-    {
-        name: 'LLM Efficacy for Thematic Content Analysis',
-        status: 'In Progress',
-        target: "SIOP Annual Conference '26",
-    },
-    {
-        name: 'Human-Autonomy Trust Dynamics',
-        status: 'In Review',
-        target: "INGRoup Annual Conference '25",
     },
 ];
 
@@ -98,6 +87,8 @@ const TopTenBadge = () => (
     </span>
 );
 
+// A Button rather than a hover-only span, so the confetti also fires on tap and
+// on Enter/Space — onMouseEnter alone left out every touch and keyboard visitor.
 const BestPaperBadge = () => {
     const ref = useRef(null);
     const fire = () => {
@@ -118,14 +109,16 @@ const BestPaperBadge = () => {
         });
     };
     return (
-        <span
+        <Button
             ref={ref}
-            onMouseEnter={fire}
+            onHoverStart={fire}
+            onPress={fire}
+            aria-label="Best Paper award"
             style={{ color: '#BA0C2F' }}
-            className="ml-2 cursor-default select-none"
+            className="ml-2 select-none appearance-none bg-transparent border-0 p-0 outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-gray-900 data-[focus-visible]:ring-offset-2 data-[focus-visible]:ring-offset-[#F7F4EE]"
         >
             ★ Best Paper
-        </span>
+        </Button>
     );
 };
 
@@ -135,16 +128,21 @@ const presentationsByYear = presentations.reduce((acc, p) => {
 }, {});
 const talkYears = Object.keys(presentationsByYear).sort((a, b) => b - a);
 
+// Derived from `presentations` so the two sections can't drift apart.
+const recentProjects = presentations
+    .filter((p) => p.year === '2026' && p.venue === 'SIOP Annual Conference')
+    .map((p) => ({
+        name: p.title,
+        status: 'Presented',
+        target: "SIOP Annual Conference '26",
+    }));
+
 const Research = () => {
     useEffect(() => {
         document.title = "Brandon Y. Kang | Research";
     }, []);
 
-    const [openYears, setOpenYears] = useState({ [talkYears[0]]: true });
-
-    const toggleYear = (year) => {
-        setOpenYears(prev => ({ ...prev, [year]: !prev[year] }));
-    };
+    const [expandedYears, setExpandedYears] = useState(new Set([talkYears[0]]));
 
     return (
         <div className="min-h-screen bg-[#F7F4EE] font-sans selection:bg-red-100">
@@ -234,7 +232,7 @@ const Research = () => {
                         className="grid md:grid-cols-3 gap-px"
                         style={{ backgroundColor: '#E2DDD5' }}
                     >
-                        {activeProjects.map((p, i) => (
+                        {recentProjects.map((p, i) => (
                             <div key={i} className="bg-[#F7F4EE] p-5">
                                 <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-3">
                                     {p.status}
@@ -251,27 +249,36 @@ const Research = () => {
                     <div className="text-[11px] font-sans uppercase tracking-widest text-gray-400 mb-6">
                         Talks & Presentations
                     </div>
-                    <div>
+                    <DisclosureGroup
+                        allowsMultipleExpanded
+                        expandedKeys={expandedYears}
+                        onExpandedChange={setExpandedYears}
+                    >
                         {talkYears.map((year) => {
-                            const isOpen = !!openYears[year];
+                            const isOpen = expandedYears.has(year);
                             const items = presentationsByYear[year];
                             return (
-                                <div key={year} className="border-t border-[#E2DDD5]">
-                                    <button
-                                        onClick={() => toggleYear(year)}
-                                        className="w-full py-3 flex items-center justify-between text-left group"
-                                    >
-                                        <span className="text-[13px] font-sans text-gray-500 group-hover:text-gray-800 transition-colors">
-                                            {year}
-                                            <span className="text-gray-400 ml-2 text-[10px]">
-                                                {items.length} {items.length === 1 ? 'talk' : 'talks'}
+                                <Disclosure key={year} id={year} className="border-t border-[#E2DDD5]">
+                                    <Heading level={3} className="m-0">
+                                        <Button
+                                            slot="trigger"
+                                            className="w-full py-3 flex items-center justify-between text-left group outline-none data-[focus-visible]:ring-2 data-[focus-visible]:ring-gray-900 data-[focus-visible]:ring-inset"
+                                        >
+                                            <span className="text-[13px] font-sans text-gray-500 group-data-[hovered]:text-gray-800 transition-colors">
+                                                {year}
+                                                <span className="text-gray-400 ml-2 text-[10px]">
+                                                    {items.length} {items.length === 1 ? 'talk' : 'talks'}
+                                                </span>
                                             </span>
-                                        </span>
-                                        <span className="text-[14px] text-gray-400 leading-none group-hover:text-gray-700 transition-colors">
-                                            {isOpen ? '−' : '+'}
-                                        </span>
-                                    </button>
-                                    {isOpen && (
+                                            <span
+                                                aria-hidden="true"
+                                                className="text-[14px] text-gray-400 leading-none group-data-[hovered]:text-gray-700 transition-colors"
+                                            >
+                                                {isOpen ? '−' : '+'}
+                                            </span>
+                                        </Button>
+                                    </Heading>
+                                    <DisclosurePanel className="talk-year-panel">
                                         <div className="pb-3 divide-y divide-[#E2DDD5]">
                                             {items.map((p, i) => (
                                                 <div key={i} className="py-3 grid grid-cols-[1fr_auto] gap-6 items-start">
@@ -290,12 +297,12 @@ const Research = () => {
                                                 </div>
                                             ))}
                                         </div>
-                                    )}
-                                </div>
+                                    </DisclosurePanel>
+                                </Disclosure>
                             );
                         })}
                         <div className="border-t border-[#E2DDD5]" />
-                    </div>
+                    </DisclosureGroup>
                     <div className="mt-4 flex justify-end">
                         <a
                             href="/cv.pdf"

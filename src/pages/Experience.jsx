@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Button, Disclosure, DisclosurePanel } from 'react-aria-components';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -142,23 +143,45 @@ const Experience = () => {
                                 )}
                             </div>
                             <div>
-                                <div
+                                <h3
                                     className="font-serif text-gray-900 leading-tight mb-1"
                                     style={{ fontSize: '20px' }}
                                 >
                                     {item.company}
-                                </div>
+                                </h3>
                                 <div className="text-[13px] font-sans text-gray-500 mb-0.5">{item.role}</div>
-                                <div className="text-[12px] font-sans text-gray-400 mb-4">{item.dates}</div>
+                                <div className="text-[12px] font-sans text-gray-400">{item.dates}</div>
                                 {item.bullets && (
-                                    <ul className="space-y-1.5">
-                                        {item.bullets.map((b, i) => (
-                                            <li key={i} className="flex gap-3 text-[14px] font-sans text-gray-600 leading-relaxed">
-                                                <span className="text-[#E2DDD5] shrink-0 mt-px">—</span>
-                                                <span>{b}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    // Collapsed by default — the roles read as a scannable list
+                                    // until you ask for detail.
+                                    <Disclosure>
+                                        {({ isExpanded }) => (
+                                            <>
+                                                <Button
+                                                    slot="trigger"
+                                                    className="group mt-3 inline-flex items-center gap-1.5 text-[12px] font-sans text-gray-400 outline-none data-[hovered]:text-gray-700 data-[focus-visible]:ring-2 data-[focus-visible]:ring-gray-900 data-[focus-visible]:ring-offset-2 data-[focus-visible]:ring-offset-[#F7F4EE] transition-colors"
+                                                >
+                                                    <span>
+                                                        {isExpanded ? 'Hide' : 'Show'} {item.bullets.length} highlights
+                                                        <span className="sr-only"> from {item.company}</span>
+                                                    </span>
+                                                    <span aria-hidden="true" className="text-[13px] leading-none">
+                                                        {isExpanded ? '−' : '+'}
+                                                    </span>
+                                                </Button>
+                                                <DisclosurePanel className="exp-panel">
+                                                    <ul className="space-y-1.5 pt-3">
+                                                        {item.bullets.map((b, i) => (
+                                                            <li key={i} className="flex gap-3 text-[14px] font-sans text-gray-600 leading-relaxed">
+                                                                <span className="text-[#E2DDD5] shrink-0 mt-px">—</span>
+                                                                <span>{b}</span>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </DisclosurePanel>
+                                            </>
+                                        )}
+                                    </Disclosure>
                                 )}
                             </div>
                         </div>
